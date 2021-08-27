@@ -1,5 +1,8 @@
 # like hearing an old song again
 
+[![hackmd-github-sync-badge](https://hackmd.io/GOVqFBANTQC8Fbuhv_LlBA/badge)](https://hackmd.io/GOVqFBANTQC8Fbuhv_LlBA)
+
+
 its 2021, ten years since the 2020 blip, and 7 years since i first wrote about mermaid diagrams in 2014. i recently rediscovered mermaid while learning just how many great features hackmd provides. i've been having fun exploring all of mermaid's modern features in work collaboratively with my friends. we're all having fun with mermaid, its like hearing an old song for the time.
 
 ```mermaid
@@ -11,7 +14,8 @@ gantt
 
 ## diagrams with mermaid
 
-you can explore the hackmd docs for all the cool extras they provide. we're just going to focus on mermaid.
+you can explore the hackmd docs for all the cool extras they provide. we're just going to focus on mermaid. below we demonstrate a few different styles of diagrams that mermaid supports.
+
 
 ## can mermaid jupyter?
 
