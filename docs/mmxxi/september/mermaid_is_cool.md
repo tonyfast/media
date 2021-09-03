@@ -1,6 +1,7 @@
 ---
 title: mermaid diagrams are cool
 status: draft
+date: 2021-09-03
 ---
 
 # like hearing an old song again
