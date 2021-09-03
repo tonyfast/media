@@ -1,4 +1,6 @@
 ---
+title: mermaid diagrams are cool
+status: draft
 ---
 
 # like hearing an old song again
@@ -86,6 +88,8 @@ sequenceDiagram
 ### State Diagram
 
 [State diagrams](https://en.wikipedia.org/wiki/State_diagram) can be defined to show how systems interact.
+
+https://twitter.com/happyautomata
 
 ```mermaid
 stateDiagram-v2
