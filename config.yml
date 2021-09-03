@@ -1,0 +1,60 @@
+author: Quansight
+exclude_patterns:
+- .nox
+- _build
+execute:
+  allow_errors: true
+  cache: ''
+  exclude_patterns: []
+  execute_notebooks: 'off'
+  run_in_temp: true
+  timeout: 30
+html:
+  baseurl: ''
+  comments:
+    hypothesis: false
+    utterances: false
+  extra_footer: ''
+  extra_navbar: ''
+  favicon: ''
+  google_analytics_id: ''
+  home_page_in_navbar: true
+  use_edit_page_button: false
+  use_issues_button: false
+  use_multitoc_numbering: true
+  use_repository_button: false
+latex:
+  latex_engine: pdflatex
+  use_jupyterbook_latex: false
+launch_buttons: {}
+only_build_toc_files: false
+parse:
+  myst_enable_extensions:
+  - linkify
+  - substitution
+  - dollarmath
+  - colon_fence
+  myst_url_schemes:
+  - mailto
+  - http
+  - https
+repository: {}
+sphinx:
+  config:
+    BLOG_AUTHOR: Quansight
+    BLOG_DESCRIPTION: 'A place for creating and publishing media. '
+    BLOG_TITLE: media
+    DEFAULT_LANG: en
+    PAGES: []
+    POSTS:
+    - - docs/mmxxi/*.rst
+      - en: posts
+      - post.tmpl
+    - - docs/mmxxi/*.md
+      - en: posts
+      - post.tmpl
+    - - docs/mmxxi/*.ipynb
+      - en: posts
+      - post.tmpl
+    SITE_URL: https://github.com/Quansight/media
+title: media

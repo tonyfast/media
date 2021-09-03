@@ -1,0 +1,9 @@
+output
+.ipynb_checkpoints
+.vscode
+__pycache__
+cache
+*.bak
+.doit*
+.env
+.qshop
