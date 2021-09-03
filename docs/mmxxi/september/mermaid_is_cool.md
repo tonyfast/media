@@ -1,6 +1,7 @@
 ---
 title: mermaid diagrams are cool
 date: 2021-09-03
+type: post
 ---
 
 i recently [columbused]() **mermaid** while learning just how many great features hackmd provides. i've been having fun exploring all of [**mermaid**'s modern features] in collaborative work with my friends on hackmd. we're all having fun with **mermaid**. 
