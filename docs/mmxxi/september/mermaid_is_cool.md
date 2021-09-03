@@ -1,15 +1,11 @@
 ---
 title: mermaid diagrams are cool
-status: draft
 date: 2021-09-03
 ---
 
-# like hearing an old song again
+i recently [columbused]() **mermaid** while learning just how many great features hackmd provides. i've been having fun exploring all of [**mermaid**'s modern features] in collaborative work with my friends on hackmd. we're all having fun with **mermaid**. 
 
-[![hackmd-github-sync-badge](https://hackmd.io/GOVqFBANTQC8Fbuhv_LlBA/badge)](https://hackmd.io/GOVqFBANTQC8Fbuhv_LlBA)
-
-
-its 2021, ten years since the 2020 blip, and 7 years since i first wrote about [**mermaid** diagrams] in 2014.[^0] i recently [columbused]() **mermaid** while learning just how many great features hackmd provides. i've been having fun exploring all of [**mermaid**'s modern features] in collaborative work with my friends on hackmd. we're all having fun with **mermaid**. it feels like hearing an old song for the time; i keep playing it on repeat.
+<!-- TEASER_END -->
 
 ```mermaid
 gantt
@@ -17,6 +13,7 @@ gantt
     is :1d, 2d
     cool :1d
 ```
+its 2021, ten years since the 2020 blip, and 7 years since i first wrote about [**mermaid** diagrams] in 2014.[^0] it feels like hearing an old song for the time; i keep playing it on repeat.
 
 you can explore the [hackmd docs] for [all the cool features] they provide; *seriously y'all gotta take the time to brush up*. we're just going to focus on **mermaid**. 
 
