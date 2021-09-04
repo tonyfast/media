@@ -1,0 +1,8 @@
+format: jb-book
+root: README
+chapters:
+- file: docs/README
+  sections:
+  - file: docs/submit
+  - file: docs/review
+  - file: docs/publish

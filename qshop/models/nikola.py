@@ -1,3 +1,6 @@
+"""pydantic models for nikola"""
+
+
 from pathlib import Path
 from . import NonNull
 from functools import partial
@@ -16,6 +19,10 @@ class Options(NonNull):
     nocomments: bool = False
     updated: datetime
     ADDITIONAL_METADATA: dict
+
+
+# required metadata
+# optional metadata
 
 
 class Metadata(NonNull):
