@@ -10,7 +10,9 @@ class UriTemplate(_URITemplate):
 
 class Url(str):
     def get(self, cache=True, **kwargs):
-        import requests, os
+        import os
+
+        import requests
 
         token = os.getenv("ACCESS_TOKEN")
 

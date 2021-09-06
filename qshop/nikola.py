@@ -1,17 +1,19 @@
 """pydantic models for nikola"""
 
 
-from pathlib import Path
-from . import NonNull
-from functools import partial
-from pydantic import Field, AnyUrl
-from typing import Optional, List
 from datetime import datetime
+from functools import partial
+from pathlib import Path
+from typing import List, Optional
+
+from pydantic import AnyUrl, Field
+
+from . import ClosedModel
 
 POSTS = dict(en="posts")
 
 
-class Options(NonNull):
+class Options(ClosedModel):
     author: str
     data: Path
     filters: List
@@ -25,7 +27,7 @@ class Options(NonNull):
 # optional metadata
 
 
-class Metadata(NonNull):
+class Metadata(ClosedModel):
     title: str
     slug: str
     date: datetime
@@ -36,7 +38,7 @@ class Metadata(NonNull):
     type: str  # probably enum
 
 
-class Nikola(NonNull):
+class Nikola(ClosedModel):
     BLOG_AUTHOR: str
     BLOG_TITLE: str
     SITE_URL: Optional[str]

@@ -1,7 +1,8 @@
 BLOG_AUTHOR = "Quansight"
 BLOG_DESCRIPTION = "A place for creating and publishing media. "
-BLOG_TITLE = "media"
+BLOG_TITLE = "A place for creating and publishing media. "
 DEFAULT_LANG = "en"
+INDEX_TEASERS = True
 PAGES = []
 POSTS = [
     ["docs/mmxxi/*.rst", {"en": "posts"}, "post.tmpl"],
@@ -10,12 +11,12 @@ POSTS = [
 ]
 SITE_URL = "https://github.com/Quansight/media"
 author = "Quansight"
-comments_config = {"hypothesis": False, "utterances": False}
+comments_config = {"hypothesis": False, "utterances": False, "parent": None}
 copyright = "2021"
 exclude_patterns = ["**.ipynb_checkpoints", ".DS_Store", ".nox", "Thumbs.db", "_build"]
 execution_allow_errors = True
 execution_excludepatterns = []
-execution_in_temp = True
+execution_in_temp = False
 execution_timeout = 30
 extensions = [
     "sphinx_togglebutton",
@@ -30,7 +31,7 @@ extensions = [
     "sphinx_book_theme",
 ]
 external_toc_exclude_missing = False
-external_toc_path = "/home/tonyfast/Documents/media/_toc.yml"
+external_toc_path = "toc.yml"
 html_add_permalinks = "¶"
 html_baseurl = ""
 html_favicon = ""
@@ -45,6 +46,7 @@ html_theme_options = {
         "jupyterhub_url": "",
         "thebe": False,
         "colab_url": "",
+        "parent": None,
     },
     "path_to_docs": "",
     "repository_url": "https://github.com/executablebooks/jupyter-book",
@@ -57,7 +59,7 @@ html_theme_options = {
     "use_edit_page_button": False,
     "use_issues_button": False,
 }
-html_title = "media"
+html_title = "My Jupyter Book"
 jupyter_cache = ""
 jupyter_execute_notebooks = "off"
 language = None
@@ -70,4 +72,3 @@ panels_add_bootstrap_css = False
 pygments_style = "sphinx"
 suppress_warnings = ["myst.domains"]
 use_jupyterbook_latex = False
-INDEX_TEASERS = True

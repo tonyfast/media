@@ -1,3 +1,5 @@
+"""extra helpful Path objects for reading and writing files"""
+
 from pathlib import Path as _Path
 
 

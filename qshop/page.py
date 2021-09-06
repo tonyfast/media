@@ -1,17 +1,17 @@
-from . import BaseModel
-from contextlib import suppress
-import re
-from pydantic import Field
-from typing import Any, List, Union
-from . import nikola
-from enum import Enum
-from ..paths import Path
 import datetime
+import re
+from contextlib import suppress
+from enum import Enum
+from typing import Any, List, Union
+
+from pydantic import Field
+
+from . import OpenModel, Path, nikola
 
 FRONT_MATTER = re.compile(r"^[-\s*]{3,}\n", re.MULTILINE)
 
 
-class Document(BaseModel):
+class Document(OpenModel):
     path: Any
     source: Any = None
     metadata: dict = Field(default_factory=dict)
@@ -62,7 +62,7 @@ class Rst(Notebook):
     format = ".rst"
 
 
-class Page(BaseModel):
+class Page(OpenModel):
     """a model for page specific configuration data"""
 
     path: Any
