@@ -57,3 +57,10 @@ class Nikola(ClosedModel):
     )
     PAGES: list = Field(default_factory=list)
     INDEX_TEASERS: bool = True
+    EXTRA_PLUGINS_DIRS: list = None
+    COMPILERS: dict = Field(default_factory=dict)
+
+    def __post_init__(self):
+        from . import nikola
+
+        self.EXTRA_PLUGINS_DIRS = [str(Path(nikola.__file__).parent / "plugins")]

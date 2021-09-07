@@ -6,3 +6,5 @@ chapters:
   - file: docs/submit
   - file: docs/review
   - file: docs/publish
+  - file: docs/api
+  - file: docs/schema

@@ -133,7 +133,7 @@ class JupyterBookConfig(ClosedModel):
 
     class Parse(ClosedModel):
         myst_enable_extensions: List[str] = Field(
-            default_factory=lambda: "linkify substitution dollarmath colon_fence".split(),
+            default_factory=lambda: "linkify substitution dollarmath colon_fence tasklist".split(),
             description="default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html",
         )
         myst_url_schemes: List[str] = Field(
@@ -168,6 +168,28 @@ class JupyterBookConfig(ClosedModel):
             default_factory=nikola.Nikola,
             description="extra sphinx configuration values",
         )
+
+        def __post_init__(self):
+            self.extra_extensions = [
+                "sphinx_togglebutton",
+                "sphinx_copybutton",
+                "myst_nb",
+                "jupyter_book",
+                "sphinx_thebe",
+                "sphinx_comments",
+                "sphinx_external_toc",
+                "sphinx.ext.intersphinx",
+                "sphinx_panels",
+                "sphinx_book_theme",
+                "sphinx_sitemap",
+                "sphinx.ext.napoleon",
+                "sphinx.ext.todo",
+                "sphinx.ext.autodoc",
+                "sphinx.ext.viewcode",
+                "sphinx-jsonschema",
+                "jupyterbook_latex",
+                "sphinxcontrib.mermaid",
+            ]
 
     class Repository(ClosedModel):
         pass

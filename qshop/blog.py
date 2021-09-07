@@ -2,6 +2,8 @@ from . import OpenModel, Path, page
 
 
 class Blog(OpenModel):
+    """manage and interact with blog content"""
+
     def discover(self):
         self.posts = [page.Page(path=x) for x in get_posts()]
         return self

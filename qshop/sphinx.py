@@ -1,7 +1,6 @@
 from doit.task import clean_targets
 
-from . import OpenModel, Path, jb, nikola, urls
-from .tasks import Task
+from . import OpenModel, Path, jb, nikola
 
 
 class Sphinx(OpenModel):
@@ -14,7 +13,6 @@ class Sphinx(OpenModel):
     config: Path = Path("config.yml")
     toc: Path = Path("toc.yml")
     conf: Path = Path("conf.py")
-    build: Path = Path("output")
 
     def get_config(self):
         """generate the jupyter book configuration file for the site."""
@@ -32,6 +30,14 @@ class Sphinx(OpenModel):
                     BLOG_TITLE=repo["description"],
                     SITE_URL=repo["html_url"],
                     BLOG_DESCRIPTION=repo["description"],
+                    COMPILERS=dict(
+                        {
+                            self.parent.md_flavor: [".md", ".mdown", ".markdown"],
+                        },
+                        rest=[".rst"],
+                        ipynb=[".ipynb"],
+                        html=[".html", ".htm"],
+                    ),
                 )
             ),
         )
@@ -64,38 +70,3 @@ class Sphinx(OpenModel):
             targets=[self.conf],
             clean=[clean_targets],
         )
-
-    def clean_nikola(self):
-        from shutil import rmtree
-
-        rmtree(self.build)
-
-    def build_nikola(self):
-        return Task(
-            name="nikola-build",
-            doc="build nikola documentation",
-            file_dep=[self.conf],
-            actions=["nikola build"],
-            targets=[self.build / "index.html"],
-            clean=[self.clean_nikola],
-        )
-
-    def build_html(self):
-        return Task(
-            name="sphinx-html",
-            doc="build sphinx html",
-            file_dep=[self.conf, self.toc],
-            actions=[f"sphinx-build . {self.build / 'docs' }"],
-            targets=[self.build / "docs" / "index.html"],
-        )
-
-    def load_tasks(self, cmd, pos_args):
-        return [
-            x().get_task()
-            for x in (
-                self.set_config,
-                self.set_conf_py,
-                self.build_html,
-                self.build_nikola,
-            )
-        ]

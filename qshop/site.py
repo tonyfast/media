@@ -23,15 +23,22 @@ class Format(Enum):
     rst = "rst"
 
 
+class MarkdownFlavors(Enum):
+    markdown = "markdown"
+    commonmark = "commonmark"
+    myst = "myst"
+
+
 class BaseSite(OpenModel):
     git: _git.Git = None
     gh: _github.Github = None
     sphinx: _sphinx.Sphinx = None
     blog: _blog.Blog = None
+    md_flavor: MarkdownFlavors = "myst"
 
     def __post_init__(self):
-        self.gh = _github.Github(parent=self, id=self.id)
         self.git = _git.Git(parent=self)
+        self.gh = _github.Github(parent=self)
         self.sphinx = _sphinx.Sphinx(parent=self)
         self.blog = _blog.Blog(parent=self)
 
@@ -43,13 +50,10 @@ class Site(BaseSite):
     the site class helps sharing this information across systems.
     """
 
-    id: str = Field(..., description="a unique project descriptor: org/repo or url")
     title: str = Field(None, description="blog title")
     data_: dict = Field(default_factory=dict, description="custom data for later use")
     description: str = Field(None, description="a description of the site")
     formats: List[Format] = Field(default_factory=lambda: [".ipynb", ".md"])
+    build: Path = Path("output")
     posts: List = Field(default_factory=list)
     pages: List = Field(default_factory=list)
-
-    def __post_init__(self):
-        super().__post_init__()

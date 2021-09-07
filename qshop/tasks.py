@@ -1,5 +1,5 @@
 """doit tasks for configuring, linting, and building documentation"""
-
+from contextlib import contextmanager
 from pathlib import Path
 from shutil import rmtree
 
@@ -7,77 +7,57 @@ from doit.task import clean_targets, dict_to_task
 from doit.cmd_base import TaskLoader2
 from pydantic import Field
 
-from . import ClosedModel
+from . import ClosedModel, Site
 
-# from .settings import DOIT_CONFIG, Settings
+DOIT_CONFIG = dict(verbosity=2, backend="json")
 
-# SETTINGS = Settings()
-# SETTINGS.set_site("Quansight/media")
-
-
-class Task(ClosedModel):
-    file_dep: list = None
-    actions: list = Field(default_factory=list)
-    task_dep: list = None
-    targets: list = None
-    cleanup: list = None
-    uptodate: list = None
-    doc: str
-    name: str
-
-    def get_task(self):
-        return dict_to_task(self.dict())
+self = Site()
 
 
 def clean_nikola_output():
-    rmtree(SETTINGS.output_dir)
+    if self.build.exists():
+        rmtree(self.build)
 
 
 def task_jb_config():
     """generate a jupyter book configuration file"""
 
-    sphinx = SETTINGS.site.sphinx
-
     def write():
-        Path(sphinx.config).write_text(sphinx.get_config().yaml())
+        Path(self.sphinx.config).write_text(self.sphinx.get_config().yaml())
 
     return dict(
         actions=[write],
-        targets=[sphinx.config],
+        targets=[self.sphinx.config],
         clean=[clean_targets],
     )
 
 
 def task_sphinx_config():
     """generate a sphinx and nikola configuration file"""
-    sphinx = SETTINGS.site.sphinx
     return dict(
-        file_dep=[SETTINGS.cwd / sphinx.config],
+        file_dep=[self.sphinx.config],
         actions=[
-            f"jb config sphinx . --toc {sphinx.toc} --config {sphinx.site_config} > {sphinx.conf}"
+            f"jb config sphinx . --toc {self.sphinx.toc} --config {self.sphinx.config} > {self.sphinx.conf}"
         ],
-        targets=[sphinx.conf],
+        targets=[self.sphinx.conf],
         clean=[clean_targets],
     )
 
 
 def task_nikola_build():
     """build the nikola docs"""
-    sphinx = SETTINGS.site.sphinx
-
     return dict(
-        file_dep=[sphinx.conf],
+        file_dep=[self.sphinx.conf],
         actions=["nikola build"],
-        targets=[SETTINGS.output_dir / "index.html"],
+        targets=[self.build / "index.html"],
         clean=[clean_nikola_output],
     )
 
 
 def task_sphinx_html():
     """build the sphinx html docs"""
-    sphinx = SETTINGS.site.sphinx
     return dict(
-        file_dep=[sphinx.conf, sphinx.toc],
-        actions=[f"sphinx-build . {SETTINGS.output_dir / 'docs' }"],
-        targets=[SETTINGS.output_dir / "docs" / "index.html"],
+        file_dep=[self.sphinx.conf, self.sphinx.toc],
+        actions=[f"sphinx-build . {self.build / 'dev' }"],
+        targets=[self.build / "dev" / "index.html"],
     )
