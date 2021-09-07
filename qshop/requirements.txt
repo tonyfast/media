@@ -1,0 +1,6 @@
+uritemplate
+pydantic
+jupyter-book
+nikola
+toml
+pyyaml
