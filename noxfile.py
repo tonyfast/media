@@ -5,5 +5,6 @@ from nox import session
 def run(session):
     session.install("-rrequirements.txt")
     session.install("-rrequirements-sphinx.txt")
+    session.run(*"pip freeze".split())
     session.run(*"python -mqshop clean".split())
     session.run(*"python -mqshop --".split() + session.posargs)
