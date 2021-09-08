@@ -3,13 +3,13 @@ from contextlib import contextmanager
 from pathlib import Path
 from shutil import rmtree
 
-from doit.task import clean_targets, dict_to_task
 from doit.cmd_base import TaskLoader2
+from doit.task import clean_targets, dict_to_task
 from pydantic import Field
 
 from . import ClosedModel, Site
 
-DOIT_CONFIG = dict(verbosity=2, backend="json")
+DOIT_CONFIG = dict(verbosity=2)
 
 self = Site()
 
