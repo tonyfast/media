@@ -9,7 +9,7 @@ from pydantic import Field
 
 from . import ClosedModel, Site
 
-DOIT_CONFIG = dict(verbosity=2)
+DOIT_CONFIG = dict(verbosity=2, dep_file="qshop")
 
 self = Site()
 
