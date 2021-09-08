@@ -6,3 +6,5 @@ toml
 pyyaml
 pathspec
 GitPython
+requests-cache
+requests
