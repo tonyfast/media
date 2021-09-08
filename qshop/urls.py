@@ -21,9 +21,12 @@ class Url(str):
             kwargs["headers"].update(Authorization=f"token {token}")
 
         if cache:
-            import requests_cache
+            try:
+                import requests_cache
 
-            requests_cache.install_cache(".qshop")
+                requests_cache.install_cache(".qshop")
+            except ModuleNotFoundError:
+                pass
         return requests.get(self, **kwargs)
 
 
