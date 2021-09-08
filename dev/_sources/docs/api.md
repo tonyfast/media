@@ -1,0 +1,4 @@
+# `qshop` api
+
+```{automodule} qshop
+```

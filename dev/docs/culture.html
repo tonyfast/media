@@ -1,0 +1,894 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>a culture of writers &#8212; My Jupyter Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script >mermaid.initialize({startOnLoad:true});</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   media
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="README.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     /docs
+    </span>
+   </code>
+   for media
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="submit.html">
+     submitting new media
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="review.html">
+     reviewing media
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="publish.html">
+     the final publishing touches
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       qshop
+      </span>
+     </code>
+     api
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="schema.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       qshop
+      </span>
+     </code>
+     schema
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/culture.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expectations">
+   expectations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inward-writerly-expectations">
+     inward, writerly expectations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#outward-content-expectations">
+     outward, content expectations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writer-experience">
+   writer experience
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-started">
+     getting started
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-week-of-preparation">
+       a week of preparation
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#prompts">
+         prompts
+        </a>
+        <ul class="nav section-nav flex-column">
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#sample-prompts">
+           sample prompts
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#audience">
+         audience
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#submitting-the-pr">
+       submitting the pr
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#assigning-the-editor">
+       assigning the editor
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#initial-feedback">
+       initial feedback
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#getting-feedback">
+       getting feedback
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#finalizing-and-publishing-the-work">
+       finalizing and publishing the work
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#editor-experience">
+   editor experience
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#editor-assignment">
+     editor assignment
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#first-interaction">
+       first interaction
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#writer-s-first-edit">
+       writer’s first edit
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#engaging-a-sample-audience">
+       engaging a sample audience
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#publishing">
+       publishing
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#post-publishing">
+       post-publishing
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writerly-process-conclusion">
+     writerly process conclusion
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#culture-and-media">
+   culture and media
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quansight-factory-floor">
+     quansight factory floor
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-perfect-is-the-enemy-of-the-good">
+       the perfect is the enemy of the good
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#price-of-entry">
+       price of entry
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#github-readme">
+         github readme
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maturing-content">
+     maturing content
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#media-conclusion">
+   media conclusion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-work-ugh">
+   the work ugh
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steps-to-agreement">
+     steps to agreement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measuring-progress">
+     measuring progress
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#consistency">
+       consistency
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#look-good-feel-good">
+       look good / feel good
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#churn">
+       churn
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mature">
+       mature
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#multi-lingual">
+       multi-lingual
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unified-documentation-api">
+     unified documentation api
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-what-are-some-reasons-someone-wouldn-t-share-their-interests">
+   (exercise): what are some reasons someone wouldn’t share their interests?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementation-meeting-notes-2021-08-27">
+   Implementation Meeting Notes (2021-08-27)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   writer experience
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   editor experience
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-we-really-need">
+   What we really need
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     sample prompts
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="a-culture-of-writers">
+<h1>a culture of writers<a class="headerlink" href="#a-culture-of-writers" title="Permalink to this headline">¶</a></h1>
+<p>collectively, quansight has a lot to say, but we remain relatively quiet. this document outlines process for creating and funneling content through the quansight team and brand.</p>
+<p>the gaant below illustrates a timeline for newcomer to content delivering novel content within 2-3 weeks. with experience different parts of the process will be reduced. with a goal efficiency of 1 week for review; a success like this is predicated on experience in turning research into narrative which comes with experience in the practice of writing.</p>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>gantt
+    title writerly experience
+
+    section writer
+    research :research 0d, 4d
+    draft :draft , 3d, 5d
+    pull request   :pr, after draft , 11d
+    post mortem :posts, after publish, 3d
+    
+    section editor
+    assign editor   :assign, after draft , 2d
+    first reviewer     :first_review, after assign, 1d
+    assign audience     :audience, after first_review, 0d
+    mediator     :mediate, after first_review, 5d
+    publish     :publish, after reviews, 3d
+    post mortem :posts, after publish, 3d
+    section audience
+    review  :reviews, after first_review, 5d
+</pre></div>
+</div>
+<p>a challenge in curated content is finding the appropriate author and editors for a specific piece. a common hinderance, and unknown unknown, is how practiced the writer is. if our writers are practicing only on curated content then they lack opportunities for improvement through practice. a necessary feature of this culture are enrichment opportunities to improve writing and communicating open source.</p>
+<p>a culture focused on writing and sharing will have more practice communicating with others. through practice, the cumulative effort will improve our communications with clients, funders, and management.</p>
+<div class="section" id="expectations">
+<h2>expectations<a class="headerlink" href="#expectations" title="Permalink to this headline">¶</a></h2>
+<p>in content work, there are two different expectations that need to be understood:</p>
+<ol class="simple">
+<li><p>the writing experience for the author(s)</p></li>
+<li><p>the readerly experience of our managers and audiences</p></li>
+</ol>
+<div class="section" id="inward-writerly-expectations">
+<h3>inward, writerly expectations<a class="headerlink" href="#inward-writerly-expectations" title="Permalink to this headline">¶</a></h3>
+<p>the writer should be focused on writing something they are proud of. they should be sheilded from external marketing and branding considerations; their editor manages this. the writer’s focus needs to be narrowed and encouraged through their struggle of turning nothing into something.</p>
+</div>
+<div class="section" id="outward-content-expectations">
+<h3>outward, content expectations<a class="headerlink" href="#outward-content-expectations" title="Permalink to this headline">¶</a></h3>
+<p>marketing and branding are outward considerations. they are dependent on the content and climate of the audience. these considerations are independent and confusing to the inward writely perspective.</p>
+</div>
+</div>
+<div class="section" id="writer-experience">
+<h2>writer experience<a class="headerlink" href="#writer-experience" title="Permalink to this headline">¶</a></h2>
+<p>the writer needs a time~~dead~~line, a date for success, not a date for succeed or fail.</p>
+<ol class="simple">
+<li><p>time and space to research and draft a work</p></li>
+<li><p>fork the content repo</p></li>
+<li><p>sync their content from hackmd to their fork</p></li>
+<li><p>create a pull request to the content repository</p></li>
+<li><p>fill out the pull request template</p></li>
+<li><p>assign an editor</p></li>
+<li><p>begin the revision</p></li>
+</ol>
+<div class="section" id="getting-started">
+<h3>getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h3>
+<p>the writer needs support in getting started, for some going from nothing to something is difficult, for others ~~&#64;tonyfast~~ completing something is difficult.</p>
+<div class="section" id="a-week-of-preparation">
+<h4>a week of preparation<a class="headerlink" href="#a-week-of-preparation" title="Permalink to this headline">¶</a></h4>
+<p>the first week an author is assigned to content they spend their effort researching and documenting their findings. the outcome is rough draft of the key pieces of information and content.</p>
+<div class="section" id="prompts">
+<h5>prompts<a class="headerlink" href="#prompts" title="Permalink to this headline">¶</a></h5>
+<p>to help the authors start, we will curate a list of prompts and priorities for folks to write about.</p>
+<div class="section" id="sample-prompts">
+<h6>sample prompts<a class="headerlink" href="#sample-prompts" title="Permalink to this headline">¶</a></h6>
+<p>action: add yours</p>
+<ul class="simple">
+<li><p>a day with xxx project</p></li>
+<li><p>a review of xxx</p></li>
+<li><p>a visualization of some data</p></li>
+<li><p>how to xxx</p></li>
+<li><p>xxx vs yyy</p></li>
+<li><p>redo old with new knowledge</p></li>
+<li><p>share your configuration settings</p></li>
+<li><p>diagram and describe a complex workflow</p></li>
+<li><p>yyyyy is cool</p></li>
+<li><p>a playlist for xxxxx</p></li>
+<li><p>your personal journeys</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="audience">
+<h5>audience<a class="headerlink" href="#audience" title="Permalink to this headline">¶</a></h5>
+<p>in the past, content has been written for an ideal audience that is fairly distant from our developer’s positions. our audience is the quansight organization, not consulting or labs, but all of quansight. authors are encouraged to write for themselves and members of our organization as their primary audiences.</p>
+<p>with quansight as the audience we (content creators) will define where to share our work, and with whom.</p>
+</div>
+</div>
+<div class="section" id="submitting-the-pr">
+<h4>submitting the pr<a class="headerlink" href="#submitting-the-pr" title="Permalink to this headline">¶</a></h4>
+<p>we encourage writers to draft their work in hackmd, and to explore all the syntaxes they support. once a draft is ready for feedback.</p>
+<p>before the end of the first week, the author makes a pull request to a content repository. it is submitted through their fork of content repository. they transfer their hackmd document to their fork by <a class="reference external" href="https://hackmd.io/c/tutorials/%2Fs%2Flink-with-github">syncing the content to the repository</a>. then they submit their contribution as a pull request.</p>
+<p>interactive, binder/qhub will be more challenging and saved for later.</p>
+</div>
+<div class="section" id="assigning-the-editor">
+<h4>assigning the editor<a class="headerlink" href="#assigning-the-editor" title="Permalink to this headline">¶</a></h4>
+<p>an editor is assigned as the primary reviewer to the pull request that will guide the author through the publishing process and manage the feedback.</p>
+</div>
+<div class="section" id="initial-feedback">
+<h4>initial feedback<a class="headerlink" href="#initial-feedback" title="Permalink to this headline">¶</a></h4>
+<p>the editor provides initial feedback and guidance for the writer. they review the form, flow, and intent of the document.</p>
+</div>
+<div class="section" id="getting-feedback">
+<h4>getting feedback<a class="headerlink" href="#getting-feedback" title="Permalink to this headline">¶</a></h4>
+<p>the writer and editor iterate until it is ready to share with a sample audience.</p>
+<p>the editor facilitates the engagement between the sample audience and the author providing project management through the editting process. the editor and audience focus on the content of the work independent of its marketing intent. they focus on the narrative, syntax, and grammar.</p>
+</div>
+<div class="section" id="finalizing-and-publishing-the-work">
+<h4>finalizing and publishing the work<a class="headerlink" href="#finalizing-and-publishing-the-work" title="Permalink to this headline">¶</a></h4>
+<p>a final effort blesses the work for publishing and begins to include external features like marketing and branding.</p>
+</div>
+</div>
+</div>
+<div class="section" id="editor-experience">
+<h2>editor experience<a class="headerlink" href="#editor-experience" title="Permalink to this headline">¶</a></h2>
+<p>the editor is the crucial interface between the writer and the audience. they diffuse the blows from the critics.</p>
+<p>editors should not be involved when there is no content, editors begin their engagement when a pull request is made for consideration.  At that time, the author is assigned an editor.</p>
+<ol class="simple">
+<li><p>the editors recieve notification of new literature and chooses if they can facilitate publishing that work with that author</p></li>
+<li><p>they assign themselves as a reviewer, or someone assigns them</p></li>
+<li><p>they need to write the first response to the pull request with thanks and set expectations for their first review (an hour, a day).</p></li>
+<li><p>they send a second response with initial feedback on the form and content on the media.</p></li>
+<li><p>the author and editor iterate until the work ready for a sample audience.</p></li>
+<li><p>the editor engages a sample audience and they have a xx days to review the work</p></li>
+<li><p>after sufficient review from a sufficient audience the final steps to publishing are completed.</p></li>
+<li><p>the pr is closed</p></li>
+<li><p>the editor advocates for this work and stays aware of relevent uses for it in consulting and labs.</p></li>
+</ol>
+<div class="section" id="editor-assignment">
+<h3>editor assignment<a class="headerlink" href="#editor-assignment" title="Permalink to this headline">¶</a></h3>
+<p>within (24/48) business hours, editors use the pull request to either volunteer or are assigned by a project manager to facilitate the publishing of an author’s work.</p>
+<div class="section" id="first-interaction">
+<h4>first interaction<a class="headerlink" href="#first-interaction" title="Permalink to this headline">¶</a></h4>
+<p>the editor shows thanks and appreciation for the writer’s toil. the editor provides initial feedback on form, flow, and intent.</p>
+</div>
+<div class="section" id="writer-s-first-edit">
+<h4>writer’s first edit<a class="headerlink" href="#writer-s-first-edit" title="Permalink to this headline">¶</a></h4>
+<p>the writer uses the editor’s critique to make a first edits.</p>
+</div>
+<div class="section" id="engaging-a-sample-audience">
+<h4>engaging a sample audience<a class="headerlink" href="#engaging-a-sample-audience" title="Permalink to this headline">¶</a></h4>
+<p>after the first tweaks, the editor engages a sample audience to provide feedback on form and syntax/grammar. they guide writers through multiple reviews during the review window. they remain available to the author for feedback and advice.</p>
+</div>
+<div class="section" id="publishing">
+<h4>publishing<a class="headerlink" href="#publishing" title="Permalink to this headline">¶</a></h4>
+<p>following a sample audience, the writer and editor do the work needed to publish and polish to post.</p>
+</div>
+<div class="section" id="post-publishing">
+<h4>post-publishing<a class="headerlink" href="#post-publishing" title="Permalink to this headline">¶</a></h4>
+<p>the editor interacts with consulting and labs to translate and groom the narrative into content for targetted audiences outside of our developer fandom.</p>
+<p>as a post mortem, a form is filled out by the writer and editor on their experiences through the process, or 15five?? (practice writing on 15five too, can we have it all?)</p>
+</div>
+</div>
+<div class="section" id="writerly-process-conclusion">
+<h3>writerly process conclusion<a class="headerlink" href="#writerly-process-conclusion" title="Permalink to this headline">¶</a></h3>
+<p>above we discussed the process and responsibilities for the key actors: an author and an editor. all times are subjective, and can be modified to suite an author or editor’s needs.</p>
+<p>with practice and experience we can expect throughput to increase.</p>
+</div>
+</div>
+<div class="section" id="culture-and-media">
+<h2>culture and media<a class="headerlink" href="#culture-and-media" title="Permalink to this headline">¶</a></h2>
+<p>through our organization’s growth we have learned to define the extent of quansight, quansight consulting and quansight labs. still the broad identity of quansight, the responsible part that balances open source and consulting, isn’t apparent or easy to present.</p>
+<p>if growth continues, and we don’t define what quansight is, we may cause irrepairable damage to our culture by continuing to define differences. between quansight’s consulting door and the labs door there is endless quality talent. which door to enter at quansight isn’t always clear. (eg where is the combined consulting/labs blog?)</p>
+<p>this section proposes an intermediate place - quansight.github.io - to highlight the talent and open source lifestyles that makes us - Quansight - successful.</p>
+<div class="section" id="quansight-factory-floor">
+<h3>quansight factory floor<a class="headerlink" href="#quansight-factory-floor" title="Permalink to this headline">¶</a></h3>
+<p>quansight.github.io is proposed to be a projection of quansight through our team members and the contributions they make to open source. the consulting and labs pages represent some of the organization. the open source quansight homepage is a data driven page with our team mates open source personas and data available.</p>
+<div class="section" id="the-perfect-is-the-enemy-of-the-good">
+<h4>the perfect is the enemy of the good<a class="headerlink" href="#the-perfect-is-the-enemy-of-the-good" title="Permalink to this headline">¶</a></h4>
+<p>quansight.github.io demonstrates our organizations practice and processes, the things we consider to provide quality open source support.</p>
+<p>quansight.github.io is designed to be a place for quansight culture to practice what it is and wants to be. the media portion of this page is designed to follow the submission process outlined above. members across the quansight community are welcomed to contribute writings to this media stream to share their research, art, design, community work, and management.</p>
+<p>the quansight community is very strong at self regulation when processes are open source and transparent; the labs blog is exemplary. quansight.github.io will be designed to be open source AF, with positive new comer experiences and community oriented meetings.</p>
+</div>
+<div class="section" id="price-of-entry">
+<h4>price of entry<a class="headerlink" href="#price-of-entry" title="Permalink to this headline">¶</a></h4>
+<p>writing content for quansight is about practice that creates quality literature or code. the only thing we ask for our authors is that they have a readme profile on github.</p>
+<div class="section" id="github-readme">
+<h5>github readme<a class="headerlink" href="#github-readme" title="Permalink to this headline">¶</a></h5>
+<p>it is important that the writers feel good about themselves. when folks submit media to quansight.github.io we ask them to create their github readme profile, and we provide support in editting it. we’ll generate better quality media if we can help folks see their own value.</p>
+<p>these readme’s will be critical for populating the team page. as a result, clients will have measurable understanding about the people they are working with.</p>
+</div>
+</div>
+</div>
+<div class="section" id="maturing-content">
+<h3>maturing content<a class="headerlink" href="#maturing-content" title="Permalink to this headline">¶</a></h3>
+<p>the finishing touches can cost a lot of time, and in some open source time is too critical to bring out the microscope to qualify. quansight.github.io is design as a sink for fast content that can be matured to formal consulting or labs content.</p>
+<p>the editors are interfaces between leadership that are aware of work in the pipeline. they help shepard quansight.github.io to more formal audiences.</p>
+<p>the writer workflow can be applied to labs or consulting, the timeline will be modified. ideally, these iterations require less research and review with experienced authors are engaged, they should take less time.</p>
+</div>
+</div>
+<div class="section" id="media-conclusion">
+<h2>media conclusion<a class="headerlink" href="#media-conclusion" title="Permalink to this headline">¶</a></h2>
+<p>quansight.github.io could be a cultural beacon for quansight. it will be safe place to practice sharing and growing ideas. over time and with practice we’ll all, working together, become better communicators.(and learn what commas are for)</p>
+</div>
+<div class="section" id="the-work-ugh">
+<h2>the work ugh<a class="headerlink" href="#the-work-ugh" title="Permalink to this headline">¶</a></h2>
+<p>practice is important for professionals and quansight.github.io.</p>
+<div class="section" id="steps-to-agreement">
+<h3>steps to agreement<a class="headerlink" href="#steps-to-agreement" title="Permalink to this headline">¶</a></h3>
+<ol>
+<li><p>use nikola to build <code class="docutils literal notranslate"><span class="pre">quansight.github.io</span></code></p></li>
+<li><p>pull request template setting expectations</p></li>
+<li><p>accept content through pull requests on <code class="docutils literal notranslate"><span class="pre">quansight.github.io</span></code> through notebooks, markdown, and rst</p></li>
+<li><p>publish content through <code class="docutils literal notranslate"><span class="pre">quansight.github.io</span></code></p></li>
+<li><p>add support for interactive content with binder</p>
+<ul class="simple">
+<li><p>jupyterlite would work for a lot of things</p></li>
+</ul>
+</li>
+<li><p>build out other aspects of the <code class="docutils literal notranslate"><span class="pre">quansight.github.io</span></code> identity besides just the blog. add member information.</p></li>
+<li><p>add sphinx (for pdf) and mkdocs (for completeness) options</p></li>
+<li><p>have members of quansight create their own sites from the <code class="docutils literal notranslate"><span class="pre">quansight</span></code> unified documentation cli</p>
+<p>truly a culture of writing</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">quansight</span> <span class="pre">read</span> <span class="pre">&#64;Quansight</span> <span class="pre">&#64;Quansight-Labs</span></code> will share all the cool stuff we’ve written.</p></li>
+<li><p>have labs use the <code class="docutils literal notranslate"><span class="pre">quansight</span></code> documentation api</p></li>
+<li><p>client projects use the <code class="docutils literal notranslate"><span class="pre">quansight</span></code> documentation api</p></li>
+</ol>
+<p>the software serves as another substrate to practice writing documentation, issues, pull requests, and code. this software will the ease of building documentation, and fill some of the repetitive costs we sink into docs.</p>
+</div>
+<div class="section" id="measuring-progress">
+<h3>measuring progress<a class="headerlink" href="#measuring-progress" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="consistency">
+<h4>consistency<a class="headerlink" href="#consistency" title="Permalink to this headline">¶</a></h4>
+<p>quansight is consistently good, and quansight.github.io imbues that. we’ll target labs’ consistency of 2 posts/month, and hope for 4 posts/month early next year.</p>
+</div>
+<div class="section" id="look-good-feel-good">
+<h4>look good / feel good<a class="headerlink" href="#look-good-feel-good" title="Permalink to this headline">¶</a></h4>
+<p>the more people with readmes that are happy with them the better we’ll feel. having personal blogs is another positive.</p>
+</div>
+<div class="section" id="churn">
+<h4>churn<a class="headerlink" href="#churn" title="Permalink to this headline">¶</a></h4>
+<p>churn is bad, if our process is positive and encouraging we should have repeat authors. maybe 2(?) post/year is good. we don’t have a good kpi, but we want return writers. we want them to want to want to write for us.</p>
+</div>
+<div class="section" id="mature">
+<h4>mature<a class="headerlink" href="#mature" title="Permalink to this headline">¶</a></h4>
+<p>quansight.github.io content is referenced in, and thereby inspires, formal content for consulting and labs.</p>
+</div>
+<div class="section" id="multi-lingual">
+<h4>multi-lingual<a class="headerlink" href="#multi-lingual" title="Permalink to this headline">¶</a></h4>
+<p>a feature of quansight is our global and cultural reach. it would be a wonderful nice to have for there to be content in french, portguese, spanish, etc. eventually…</p>
+</div>
+</div>
+<div class="section" id="unified-documentation-api">
+<h3>unified documentation api<a class="headerlink" href="#unified-documentation-api" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>quansight config
+quansight build
+quansight watch
+</pre></div>
+</div>
+<p>alongside the efforts to improve our writerly talents we will also build software that unifies the process of building documentation and blogs. all open source projects eventually need documentation. we’ll build unified documentation tools that provide suggested configurations for the best readerly and writerly experiences.</p>
+<p>through these steps quansight.github.io, quansight members, and labs will have the same publishing systems.</p>
+</div>
+</div>
+<div class="section" id="exercise-what-are-some-reasons-someone-wouldn-t-share-their-interests">
+<h2>(exercise): what are some reasons someone wouldn’t share their interests?<a class="headerlink" href="#exercise-what-are-some-reasons-someone-wouldn-t-share-their-interests" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>they don’t think they have an audience for their special interests</p></li>
+<li><p>they don’t know what to write about</p></li>
+<li><p>they lack confidence in their english writing</p></li>
+<li><p>They become (legitimately) busy on client projects</p></li>
+<li><p>They are between projects but that just means they have time to catch up on all of the other tasks they were asked to do in the last two months (writing is added to the bottom of the queue)</p></li>
+</ul>
+</div>
+<div class="section" id="implementation-meeting-notes-2021-08-27">
+<h2>Implementation Meeting Notes (2021-08-27)<a class="headerlink" href="#implementation-meeting-notes-2021-08-27" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>gantt
+    title writerly experience
+
+    section writer
+    research :research 0d, 4d
+    draft :draft , 3d, 5d
+    pull request   :pr, after draft , 11d
+    post mortem :posts, after publish, 3d
+    
+    section editor
+    assign editor   :assign, after draft , 2d
+    first reviewer     :first_review, after assign, 1d
+    assign audience     :audience, after first_review, 0d
+    mediator     :mediate, after first_review, 5d
+    publish     :publish, after reviews, 3d
+    post mortem :posts, after publish, 3d
+    section audience
+    review  :reviews, after first_review, 5d
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>writer experience<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>the writer needs a time~~dead~~line, a date for success, not a date for succeed or fail.</p>
+<ol class="simple">
+<li><p>time and space to research and draft a work</p></li>
+</ol>
+<ul class="simple">
+<li><p>Time to work (see gantt). More structure to aim for.</p></li>
+</ul>
+<ol class="simple">
+<li><p>fork the content repo (provides isolation for the writer)</p></li>
+<li><p>sync their content from hackmd to their fork</p></li>
+</ol>
+<ul class="simple">
+<li><p>Easy for anyone to do - no action needed for us</p></li>
+</ul>
+<ol class="simple">
+<li><p>create a pull request to the content repository</p></li>
+<li><p>fill out the pull request template</p></li>
+</ol>
+<ul class="simple">
+<li><p>Make PR template &#64;kcpevey</p></li>
+</ul>
+<ol class="simple">
+<li><p>assign an editor</p></li>
+</ol>
+<ul class="simple">
+<li><p>Literally assign reviewer in the PR</p></li>
+</ul>
+<ol class="simple">
+<li><p>begin the revision</p></li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>editor experience<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>the editor is the crucial interface between the writer and the audience. they diffuse the blows from the critics.</p>
+<p>editors should not be involved when there is no content, editors begin their engagement when a pull request is made for consideration.  At that time, the author is assigned an editor.</p>
+<ol class="simple">
+<li><p>the editors recieve notification of new literature and chooses if they can facilitate publishing that work with that author</p></li>
+</ol>
+<ul class="simple">
+<li><p>Editor/reviewer will get github notification</p></li>
+<li><p>Manager should also get a notification</p></li>
+</ul>
+<ol class="simple">
+<li><p>they assign themselves as a reviewer, or someone assigns them</p></li>
+<li><p>they need to write the first response to the pull request with thanks and set expectations for their first review (an hour, a day).</p></li>
+<li><p>they send a second response with initial feedback on the form and content on the media.</p></li>
+<li><p>the author and editor iterate until the work ready for a sample audience.</p></li>
+<li><p>the editor engages a sample audience and they have a xx days to review the work</p></li>
+<li><p>after sufficient review from a sufficient audience the final steps to publishing are completed.</p></li>
+<li><p>the pr is closed</p></li>
+<li><p>the editor advocates for this work and stays aware of relevent uses for it in consulting and labs.</p></li>
+</ol>
+</div>
+<div class="section" id="what-we-really-need">
+<h2>What we really need<a class="headerlink" href="#what-we-really-need" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>a repo to hold stuff https://github.com/Quansight/media</p></li>
+<li><p>Markdown docs for contributing (requirements)</p></li>
+<li><p>Prompts for writing</p></li>
+<li><p>Meeting for writers and editors (office hours, not stand up). Tony always there. Eric always there.</p></li>
+<li><p>Submission process/PR template</p></li>
+<li><p>gh actions for publishing (nikola -&gt; quansight.github.io)</p></li>
+<li><p>make meeting to continue this planning</p></li>
+</ul>
+<p>Next steps</p>
+<ul class="simple">
+<li><p>test module/CLI</p></li>
+</ul>
+<div class="section" id="id3">
+<h3>sample prompts<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>action: add yours</p>
+<ul class="simple">
+<li><p>a day with xxx project</p></li>
+<li><p>a review of xxx</p></li>
+<li><p>a visualization of some data</p></li>
+<li><p>how to xxx</p></li>
+<li><p>xxx vs yyy</p></li>
+<li><p>redo old with new knowledge</p></li>
+<li><p>share your configuration settings</p></li>
+<li><p>diagram and describe a complex workflow</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By tonyfast<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,1043 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>qshop schema &#8212; My Jupyter Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script >mermaid.initialize({startOnLoad:true});</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="qshop api" href="api.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   media
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     /docs
+    </span>
+   </code>
+   for media
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="submit.html">
+     submitting new media
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="review.html">
+     reviewing media
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="publish.html">
+     the final publishing touches
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       qshop
+      </span>
+     </code>
+     api
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       qshop
+      </span>
+     </code>
+     schema
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/schema.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notes">
+   Notes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#note">
+   Note
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyterbookconfig">
+   JupyterBookConfig
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="qshop-schema">
+<h1><code class="docutils literal notranslate"><span class="pre">qshop</span></code> schema<a class="headerlink" href="#qshop-schema" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>it configures:</p>
+<ul>
+<li><p>sphinx</p></li>
+<li><p>latex</p></li>
+<li><p>nikola</p>
+<p>both nikola and sphinx use the conf.py convention. nikola using capital letters
+for variables names while sphinx uses lowercase. because of these differences we
+can configure documentation for both in the same file, and share configuration
+metadata.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="note">
+<h2>Note<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h2>
+<p>the descriptions were taken from the jb docs https://jupyterbook.org/customize/config.html</p>
+</div>
+<div class="section" id="jupyterbookconfig">
+<h2>JupyterBookConfig<a class="headerlink" href="#jupyterbookconfig" title="Permalink to this headline">¶</a></h2>
+<table class="table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="5"><p>model for the jupyter book configuration file
+that contains all of the documentation building information.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="4"><p><em>object</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="5"><p>properties</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><ul class="simple">
+<li><p>title</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>Title</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="3"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><ul class="simple">
+<li><p>author</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>Author</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="3"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><ul class="simple">
+<li><p>copyright</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>Copyright</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="3"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><ul class="simple">
+<li><p>logo</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>Logo</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="3"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>exclude_patterns</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>Exclude Patterns</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="3"><p><em>array</em></p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><p>items</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>only_build_toc_files</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>Only Build Toc Files</em></p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="3"><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="3"><p>False</p></td>
+</tr>
+<tr class="row-even"><td><ul class="simple">
+<li><p>execute</p></li>
+</ul>
+</td>
+<td colspan="4"><p>:ref:<code class="docutils literal notranslate"><span class="pre">#/definitions/Execute</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><ul class="simple">
+<li><p>parse</p></li>
+</ul>
+</td>
+<td colspan="4"><p>:ref:<code class="docutils literal notranslate"><span class="pre">#/definitions/Parse</span></code></p></td>
+</tr>
+<tr class="row-even"><td><ul class="simple">
+<li><p>html</p></li>
+</ul>
+</td>
+<td colspan="4"><p>:ref:<code class="docutils literal notranslate"><span class="pre">#/definitions/Html</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><ul class="simple">
+<li><p>repository</p></li>
+</ul>
+</td>
+<td colspan="4"><p>:ref:<code class="docutils literal notranslate"><span class="pre">#/definitions/Repository</span></code></p></td>
+</tr>
+<tr class="row-even"><td><ul class="simple">
+<li><p>launch_buttons</p></li>
+</ul>
+</td>
+<td colspan="4"><p>:ref:<code class="docutils literal notranslate"><span class="pre">#/definitions/Buttons</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><ul class="simple">
+<li><p>latex</p></li>
+</ul>
+</td>
+<td colspan="4"><p>:ref:<code class="docutils literal notranslate"><span class="pre">#/definitions/Latex</span></code></p></td>
+</tr>
+<tr class="row-even"><td><ul class="simple">
+<li><p>sphinx</p></li>
+</ul>
+</td>
+<td colspan="4"><p>:ref:<code class="docutils literal notranslate"><span class="pre">#/definitions/Sphinx</span></code></p></td>
+</tr>
+<tr class="row-odd"><td colspan="5"><p>definitions</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>EXECUTE</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>EXECUTE</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>An enumeration.</p></td>
+</tr>
+<tr class="row-even"><td><p>enum</p></td>
+<td colspan="3"><p>auto, force, cache, off</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>STDERR</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>STDERR</em></p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><p>An enumeration.</p></td>
+</tr>
+<tr class="row-odd"><td><p>enum</p></td>
+<td colspan="3"><p>show, remove, remove-warn, warn, error, severe</p></td>
+</tr>
+<tr class="row-even"><td rowspan="30"><ul class="simple">
+<li><p>Execute</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>Execute</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>notebook execution settings</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>properties</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>execute_notebooks</p></li>
+</ul>
+</td>
+<td colspan="3"><p>jupyter book execution mode; off by default</p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"><p>off</p></td>
+</tr>
+<tr class="row-even"><td><p>allOf</p></td>
+<td colspan="2"><p>:ref:<code class="docutils literal notranslate"><span class="pre">#/definitions/EXECUTE</span></code></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><ul class="simple">
+<li><p>cache</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Cache</em></p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>A path to the jupyter cache that will be used to store execution artifacts. Defaults to <code class="docutils literal notranslate"><span class="pre">_build/.jupyter_cache/</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"></td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><ul class="simple">
+<li><p>exclude_patterns</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Exclude Patterns</em></p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>A list of patterns to <em>skip</em> in execution (e.g. a notebook that takes a really long time)</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>array</em></p></td>
+</tr>
+<tr class="row-even"><td><p>items</p></td>
+<td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><ul class="simple">
+<li><p>timeout</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Timeout</em></p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>The maximum time (in seconds) each notebook cell is allowed to run.</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>number</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>30</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><ul class="simple">
+<li><p>run_in_temp</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Run In Temp</em></p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, then a temporary directory will be created and used as the command working directory (cwd),
+otherwise the notebook’s parent directory will be the cwd.</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><ul class="simple">
+<li><p>allow_errors</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Allow Errors</em></p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>when a code cell raises an error the execution is stopped, otherwise all cells are always run. default is false so docs are created</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>stderr_output</p></li>
+</ul>
+</td>
+<td colspan="3"><p>the mode to show the stderr output in; the default is show for debugging.</p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>show</p></td>
+</tr>
+<tr class="row-odd"><td><p>allOf</p></td>
+<td colspan="2"><p>:ref:<code class="docutils literal notranslate"><span class="pre">#/definitions/STDERR</span></code></p></td>
+</tr>
+<tr class="row-even"><td rowspan="12"><ul class="simple">
+<li><p>Parse</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>Parse</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>OpenModels are custom object oriented classes with an implict schema (eg jupyterbook, pyproject)</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>properties</p></td>
+</tr>
+<tr class="row-even"><td rowspan="4"><ul class="simple">
+<li><p>myst_enable_extensions</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Myst Enable Extensions</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p>default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>array</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>items</p></td>
+<td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td rowspan="4"><ul class="simple">
+<li><p>myst_url_schemes</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Myst Url Schemes</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p>URI schemes that will be recognised as external URLs in Markdown links</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>array</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>items</p></td>
+<td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td rowspan="10"><ul class="simple">
+<li><p>Comments</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>Comments</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>OpenModels are custom object oriented classes with an implict schema (eg jupyterbook, pyproject)</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>properties</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>hypothesis</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Hypothesis</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>utterances</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Utterances</em></p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"><p>False</p></td>
+</tr>
+<tr class="row-even"><td rowspan="36"><ul class="simple">
+<li><p>Html</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>Html</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>OpenModels are custom object oriented classes with an implict schema (eg jupyterbook, pyproject)</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>properties</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>favicon</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Favicon</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>use_edit_page_button</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Use Edit Page Button</em></p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"><p>False</p></td>
+</tr>
+<tr class="row-even"><td rowspan="4"><ul class="simple">
+<li><p>use_repository_button</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Use Repository Button</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"><p>False</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>anyOf</p></td>
+<td><p>type</p></td>
+<td><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>use_issues_button</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Use Issues Button</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>use_multitoc_numbering</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Use Multitoc Numbering</em></p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"><p>True</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>extra_navbar</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Extra Navbar</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>extra_footer</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Extra Footer</em></p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>google_analytics_id</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Google Analytics Id</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>home_page_in_navbar</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Home Page In Navbar</em></p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"><p>True</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>baseurl</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Baseurl</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"></td>
+</tr>
+<tr class="row-odd"><td><ul class="simple">
+<li><p>comments</p></li>
+</ul>
+</td>
+<td colspan="3"><p>:ref:<code class="docutils literal notranslate"><span class="pre">#/definitions/Comments</span></code></p></td>
+</tr>
+<tr class="row-even"><td rowspan="4"><ul class="simple">
+<li><p>Repository</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>Repository</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>OpenModels are custom object oriented classes with an implict schema (eg jupyterbook, pyproject)</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>properties</p></td>
+</tr>
+<tr class="row-even"><td rowspan="4"><ul class="simple">
+<li><p>Buttons</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>Buttons</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>OpenModels are custom object oriented classes with an implict schema (eg jupyterbook, pyproject)</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>properties</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>TEX</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>TEX</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>An enumeration.</p></td>
+</tr>
+<tr class="row-even"><td><p>enum</p></td>
+<td colspan="3"><p>pdflatex, xelatex, luatex, platex, uplatex</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="9"><ul class="simple">
+<li><p>Latex</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>Latex</em></p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><p>OpenModels are custom object oriented classes with an implict schema (eg jupyterbook, pyproject)</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>latex_engine</p></li>
+</ul>
+</td>
+<td><p>default</p></td>
+<td colspan="2"><p>pdflatex</p></td>
+</tr>
+<tr class="row-even"><td><p>allOf</p></td>
+<td colspan="2"><p>:ref:<code class="docutils literal notranslate"><span class="pre">#/definitions/TEX</span></code></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>use_jupyterbook_latex</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Use Jupyterbook Latex</em></p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"><p>False</p></td>
+</tr>
+<tr class="row-even"><td rowspan="31"><ul class="simple">
+<li><p>Nikola</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>Nikola</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>OpenModels are custom object oriented classes with an implict schema (eg jupyterbook, pyproject)</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>properties</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><ul class="simple">
+<li><p><strong>BLOG_AUTHOR</strong></p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Blog Author</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><ul class="simple">
+<li><p><strong>BLOG_TITLE</strong></p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Blog Title</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><ul class="simple">
+<li><p>SITE_URL</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Site Url</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><ul class="simple">
+<li><p>BLOG_EMAIL</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Blog Email</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><ul class="simple">
+<li><p><strong>BLOG_DESCRIPTION</strong></p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Blog Description</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>DEFAULT_LANG</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Default Lang</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>en</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>POSTS</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Posts</em></p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>array</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p>items</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>PAGES</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Pages</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>array</em></p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>items</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>INDEX_TEASERS</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Index Teasers</em></p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"><p>True</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>EXTRA_PLUGINS_DIRS</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Extra Plugins Dirs</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>array</em></p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>items</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>COMPILERS</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Compilers</em></p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>object</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="13"><ul class="simple">
+<li><p>Sphinx</p></li>
+</ul>
+</td>
+<td colspan="4"><p><em>Sphinx</em></p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><p>OpenModels are custom object oriented classes with an implict schema (eg jupyterbook, pyproject)</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>extra_extensions</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Extra Extensions</em></p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>array</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p>items</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>local_extensions</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Local Extensions</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>array</em></p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>items</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>config</p></li>
+</ul>
+</td>
+<td colspan="3"><p><em>Config</em></p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>extra sphinx configuration values</p></td>
+</tr>
+<tr class="row-odd"><td><p>allOf</p></td>
+<td colspan="2"><p>:ref:<code class="docutils literal notranslate"><span class="pre">#/definitions/Nikola</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="api.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><code class="docutils literal notranslate"><span class="pre">qshop</span></code> api</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By tonyfast<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
