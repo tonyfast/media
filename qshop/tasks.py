@@ -37,7 +37,7 @@ def task_sphinx_config():
     return dict(
         file_dep=[self.sphinx.config],
         actions=[
-            f"jb config sphinx . --toc {self.sphinx.toc} --config {self.sphinx.config} > {self.sphinx.conf}"
+            f"jb config sphinx . --toc {self.sphinx.toc} --config {self.sphinx.config} > {self.sphinx.conf}",
         ],
         targets=[self.sphinx.conf],
         clean=[clean_targets],
@@ -58,6 +58,6 @@ def task_sphinx_html():
     """build the sphinx html docs"""
     return dict(
         file_dep=[self.sphinx.conf, self.sphinx.toc],
-        actions=[f"sphinx-build . {self.build / 'dev' }"],
-        targets=[self.build / "dev" / "index.html"],
+        actions=[f"sphinx-build . {self.build / 'dev' }", "touch .nojekyll"],
+        targets=[self.build / "dev" / "index.html", self.build / ".nojekyll"],
     )
