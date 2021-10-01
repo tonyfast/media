@@ -1,4 +1,0 @@
-sphinx-sitemap
-sphinx-jsonschema
-jupyterbook-latex
-sphinxcontrib-mermaid
