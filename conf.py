@@ -1,0 +1,12 @@
+BLOG_AUTHOR = 'tonyfast'
+BLOG_TITLE = 'media'
+BLOG_DESCRIPTION = 'A place for creating and publishing media. '
+SITE_URL = '/'
+BLOG_EMAIL = 'tony.fast@gmail.com'
+DEFAULT_LANG = 'en'
+POSTS = (('_posts/*.md', {'en': 'posts'}, 'post.tmpl'), ('_posts/*.markdown', {'en': 'posts'}, 'post.tmpl'), ('_posts/*.ipynb', {'en': 'posts'}, 'post.tmpl'), ('_posts/*.rst', {'en': 'posts'}, 'post.tmpl'))
+PAGES = (('docs/*.md', {'en': 'posts'}, 'post.tmpl'), ('docs/*.markdown', {'en': 'posts'}, 'post.tmpl'), ('docs/*.ipynb', {'en': 'posts'}, 'post.tmpl'), ('docs/*.rst', {'en': 'posts'}, 'post.tmpl'))
+INDEX_TEASERS = True
+EXTRA_PLUGINS_DIRS = ['/home/tonyfast/miniforge3/lib/python3.9/site-packages/qpub/nikola_plugins']
+COMPILERS = {'rest': ['.rst'], 'myst': ['.md', '.markdown'], 'ipynb': ['.ipynb']}
+OUTPUT_FOLDER = 'output/blog'
