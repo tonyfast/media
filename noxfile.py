@@ -6,4 +6,5 @@ def build_docs(session):
     session.install("git+https://github.com/tonyfast/qpub@new")
     session.install("nikola", "notebook")
 
-    session.run("qpub", "blog:configure", "blog:build")
+    session.run("qpub", "blog:configure")
+    session.run("qpub", "blog:build")
