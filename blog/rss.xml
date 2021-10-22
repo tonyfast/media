@@ -1,2 +1,1361 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>media</title><link>/</link><description>A place for creating and publishing media. </description><atom:link href="/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 22 Oct 2021 16:52:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs></channel></rss>
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>media</title><link>/</link><description>A place for creating and publishing media. </description><atom:link href="/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 22 Oct 2021 16:55:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>2021-10-03-pd-calendar</title><link>/posts/0d5cbee1f3b4aac205e9ddd407d0f4dc/2021-10-03-pd-calendar/</link><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="what-will-we-learn-when-we-make-calendars-in-pandas?"&gt;what will we learn when &lt;em&gt;we make calendars in pandas?&lt;/em&gt;&lt;a class="anchor-link" href="/posts/0d5cbee1f3b4aac205e9ddd407d0f4dc/2021-10-03-pd-calendar/#what-will-we-learn-when-we-make-calendars-in-pandas?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;below we are going to make calendars using pandas and explore the pandas api while we're at it. we'll explore different parts of thr &lt;code&gt;pandas&lt;/code&gt; api like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pandas.date_range&lt;/code&gt; to begin our work with the calendar&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pandas.DataFrame.assign&lt;/code&gt; to set new columns on our dataframe&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;df.apply(pandas.Series)&lt;/code&gt; to wide dataframes on container elements&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pandas.DataFrame.unstack&lt;/code&gt; to change the shape of our dataframe by translating row indexes to columns.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pandas.DataFrame.style&lt;/code&gt; to use a dataframe to provide cell level styling in our output.&lt;/li&gt;
+&lt;li&gt;we used &lt;code&gt;pandas.DataFrame.groupby&lt;/code&gt; in a for loop, as an iterator, which is quite a powerful technique for inspecting grouped operations&lt;p&gt;&lt;a href="/posts/0d5cbee1f3b4aac205e9ddd407d0f4dc/2021-10-03-pd-calendar/"&gt;Read more…&lt;/a&gt; (10 min remaining to read)&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>/posts/0d5cbee1f3b4aac205e9ddd407d0f4dc/2021-10-03-pd-calendar/</guid><pubDate>Wed, 13 Oct 2021 00:00:00 GMT</pubDate></item><item><title>2021-10-08-distributions-dataframe</title><link>/posts/f34f1fc4454de5e61b6ed55a6736071c/2021-10-08-distributions-dataframe/</link><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="what-do-we-learn-when-we-look-at-the-distributions-on-our-system"&gt;what do we learn when &lt;em&gt;we look at the distributions on our system&lt;/em&gt;&lt;a class="anchor-link" href="/posts/f34f1fc4454de5e61b6ed55a6736071c/2021-10-08-distributions-dataframe/#what-do-we-learn-when-we-look-at-the-distributions-on-our-system"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="/posts/f34f1fc4454de5e61b6ed55a6736071c/2021-10-08-distributions-dataframe/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>/posts/f34f1fc4454de5e61b6ed55a6736071c/2021-10-08-distributions-dataframe/</guid><pubDate>Wed, 13 Oct 2021 00:00:00 GMT</pubDate></item><item><title>2021-10-11-colorizing</title><link>/posts/e2cae138e4bb043cd277709ff45ba8a3/2021-10-11-colorizing/</link><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="what-do-we-learn-when-we-make-colormaps-from-dataframes"&gt;what do we learn when we &lt;em&gt;make colormaps from dataframes&lt;/em&gt;&lt;a class="anchor-link" href="/posts/e2cae138e4bb043cd277709ff45ba8a3/2021-10-11-colorizing/#what-do-we-learn-when-we-make-colormaps-from-dataframes"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;toolz.curried&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;toolz&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;we'll begin with a small linear &lt;code&gt;domain&lt;/code&gt; of values between 0..1.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="n"&gt;domain&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;we'll focus on primary color components to start. from the primary components we can make a lot of colors. we combine the &lt;code&gt;domain&lt;/code&gt; with empty values, to create triplets that will become our color.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="n"&gt;triples&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;zip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;domain&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;domain&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;domain&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;we'll start with making &lt;code&gt;red&lt;/code&gt;, with a focus on &lt;code&gt;rgb&lt;/code&gt; values, as a series of triples between 0..255.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="n"&gt;red&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Series&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;triples&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apply&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mul&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;255&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;red&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;0                    [0.0, 0.0, 0.0]
+1                   [25.5, 0.0, 0.0]
+2                   [51.0, 0.0, 0.0]
+3      [76.50000000000001, 0.0, 0.0]
+4                  [102.0, 0.0, 0.0]
+5                  [127.5, 0.0, 0.0]
+6     [153.00000000000003, 0.0, 0.0]
+7     [178.50000000000003, 0.0, 0.0]
+8                  [204.0, 0.0, 0.0]
+9                  [229.5, 0.0, 0.0]
+10                 [255.0, 0.0, 0.0]
+dtype: object&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;rgb&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="s2"&gt;"format a pandas cells"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;"font-size: 0px; background-color: rgb("&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;", "&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="nb"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;");"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;why are we calling this value &lt;code&gt;red&lt;/code&gt;?&lt;/p&gt;
+&lt;p&gt;because we can explicitly the format for each cell and (255, 0, 0) is completely red.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="n"&gt;red&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_frame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"red"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;applymap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rgb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;th&gt;7&lt;/th&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;th&gt;9&lt;/th&gt;
+      &lt;th&gt;10&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;red&lt;/th&gt;
+      &lt;td&gt;font-size: 0px; background-color: rgb(0.0, 0.0...&lt;/td&gt;
+      &lt;td&gt;font-size: 0px; background-color: rgb(25.5, 0....&lt;/td&gt;
+      &lt;td&gt;font-size: 0px; background-color: rgb(51.0, 0....&lt;/td&gt;
+      &lt;td&gt;font-size: 0px; background-color: rgb(76.50000...&lt;/td&gt;
+      &lt;td&gt;font-size: 0px; background-color: rgb(102.0, 0...&lt;/td&gt;
+      &lt;td&gt;font-size: 0px; background-color: rgb(127.5, 0...&lt;/td&gt;
+      &lt;td&gt;font-size: 0px; background-color: rgb(153.0000...&lt;/td&gt;
+      &lt;td&gt;font-size: 0px; background-color: rgb(178.5000...&lt;/td&gt;
+      &lt;td&gt;font-size: 0px; background-color: rgb(204.0, 0...&lt;/td&gt;
+      &lt;td&gt;font-size: 0px; background-color: rgb(229.5, 0...&lt;/td&gt;
+      &lt;td&gt;font-size: 0px; background-color: rgb(255.0, 0...&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;with a small change to code in the cell above, we can indeed colorize our table.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [7]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="n"&gt;red&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_frame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"red"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;applymap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rgb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
+
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;&lt;style type="text/css"&gt;
+#T_28aad_row0_col0 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 0.0);
+}
+#T_28aad_row0_col1 {
+  font-size: 0px;
+  background-color: rgb(25.5, 0.0, 0.0);
+}
+#T_28aad_row0_col2 {
+  font-size: 0px;
+  background-color: rgb(51.0, 0.0, 0.0);
+}
+#T_28aad_row0_col3 {
+  font-size: 0px;
+  background-color: rgb(76.50000000000001, 0.0, 0.0);
+}
+#T_28aad_row0_col4 {
+  font-size: 0px;
+  background-color: rgb(102.0, 0.0, 0.0);
+}
+#T_28aad_row0_col5 {
+  font-size: 0px;
+  background-color: rgb(127.5, 0.0, 0.0);
+}
+#T_28aad_row0_col6 {
+  font-size: 0px;
+  background-color: rgb(153.00000000000003, 0.0, 0.0);
+}
+#T_28aad_row0_col7 {
+  font-size: 0px;
+  background-color: rgb(178.50000000000003, 0.0, 0.0);
+}
+#T_28aad_row0_col8 {
+  font-size: 0px;
+  background-color: rgb(204.0, 0.0, 0.0);
+}
+#T_28aad_row0_col9 {
+  font-size: 0px;
+  background-color: rgb(229.5, 0.0, 0.0);
+}
+#T_28aad_row0_col10 {
+  font-size: 0px;
+  background-color: rgb(255.0, 0.0, 0.0);
+}
+&lt;/style&gt;
+&lt;table id="T_28aad_"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th class="blank level0"&gt; &lt;/th&gt;
+      &lt;th class="col_heading level0 col0"&gt;0&lt;/th&gt;
+      &lt;th class="col_heading level0 col1"&gt;1&lt;/th&gt;
+      &lt;th class="col_heading level0 col2"&gt;2&lt;/th&gt;
+      &lt;th class="col_heading level0 col3"&gt;3&lt;/th&gt;
+      &lt;th class="col_heading level0 col4"&gt;4&lt;/th&gt;
+      &lt;th class="col_heading level0 col5"&gt;5&lt;/th&gt;
+      &lt;th class="col_heading level0 col6"&gt;6&lt;/th&gt;
+      &lt;th class="col_heading level0 col7"&gt;7&lt;/th&gt;
+      &lt;th class="col_heading level0 col8"&gt;8&lt;/th&gt;
+      &lt;th class="col_heading level0 col9"&gt;9&lt;/th&gt;
+      &lt;th class="col_heading level0 col10"&gt;10&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th id="T_28aad_level0_row0" class="row_heading level0 row0"&gt;red&lt;/th&gt;
+      &lt;td id="T_28aad_row0_col0" class="data row0 col0"&gt;[0. 0. 0.]&lt;/td&gt;
+      &lt;td id="T_28aad_row0_col1" class="data row0 col1"&gt;[25.5  0.   0. ]&lt;/td&gt;
+      &lt;td id="T_28aad_row0_col2" class="data row0 col2"&gt;[51.  0.  0.]&lt;/td&gt;
+      &lt;td id="T_28aad_row0_col3" class="data row0 col3"&gt;[76.5  0.   0. ]&lt;/td&gt;
+      &lt;td id="T_28aad_row0_col4" class="data row0 col4"&gt;[102.   0.   0.]&lt;/td&gt;
+      &lt;td id="T_28aad_row0_col5" class="data row0 col5"&gt;[127.5   0.    0. ]&lt;/td&gt;
+      &lt;td id="T_28aad_row0_col6" class="data row0 col6"&gt;[153.   0.   0.]&lt;/td&gt;
+      &lt;td id="T_28aad_row0_col7" class="data row0 col7"&gt;[178.5   0.    0. ]&lt;/td&gt;
+      &lt;td id="T_28aad_row0_col8" class="data row0 col8"&gt;[204.   0.   0.]&lt;/td&gt;
+      &lt;td id="T_28aad_row0_col9" class="data row0 col9"&gt;[229.5   0.    0. ]&lt;/td&gt;
+      &lt;td id="T_28aad_row0_col10" class="data row0 col10"&gt;[255.   0.   0.]&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;green and blue are a &lt;code&gt;shift&lt;/code&gt; of the indices in the triple.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [8]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="nd"&gt;@toolz&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;curry&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;shift&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concatenate&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:],&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[:&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;with &lt;code&gt;shift(1)&lt;/code&gt; for blue, and &lt;code&gt;shift(2)&lt;/code&gt; for green we can construct a composite dataframe with all of our &lt;code&gt;rgb&lt;/code&gt; colorvalues &lt;code&gt;...&lt;/code&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [14]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="n"&gt;colors&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"red blue green"&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [15]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concat&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;
+        &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;red&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apply&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;shift&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;colors&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[15]:&lt;/div&gt;
+
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;th&gt;7&lt;/th&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;th&gt;9&lt;/th&gt;
+      &lt;th&gt;10&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;red&lt;/th&gt;
+      &lt;td&gt;[0.0, 0.0, 0.0]&lt;/td&gt;
+      &lt;td&gt;[25.5, 0.0, 0.0]&lt;/td&gt;
+      &lt;td&gt;[51.0, 0.0, 0.0]&lt;/td&gt;
+      &lt;td&gt;[76.50000000000001, 0.0, 0.0]&lt;/td&gt;
+      &lt;td&gt;[102.0, 0.0, 0.0]&lt;/td&gt;
+      &lt;td&gt;[127.5, 0.0, 0.0]&lt;/td&gt;
+      &lt;td&gt;[153.00000000000003, 0.0, 0.0]&lt;/td&gt;
+      &lt;td&gt;[178.50000000000003, 0.0, 0.0]&lt;/td&gt;
+      &lt;td&gt;[204.0, 0.0, 0.0]&lt;/td&gt;
+      &lt;td&gt;[229.5, 0.0, 0.0]&lt;/td&gt;
+      &lt;td&gt;[255.0, 0.0, 0.0]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;blue&lt;/th&gt;
+      &lt;td&gt;[0.0, 0.0, 0.0]&lt;/td&gt;
+      &lt;td&gt;[0.0, 0.0, 25.5]&lt;/td&gt;
+      &lt;td&gt;[0.0, 0.0, 51.0]&lt;/td&gt;
+      &lt;td&gt;[0.0, 0.0, 76.50000000000001]&lt;/td&gt;
+      &lt;td&gt;[0.0, 0.0, 102.0]&lt;/td&gt;
+      &lt;td&gt;[0.0, 0.0, 127.5]&lt;/td&gt;
+      &lt;td&gt;[0.0, 0.0, 153.00000000000003]&lt;/td&gt;
+      &lt;td&gt;[0.0, 0.0, 178.50000000000003]&lt;/td&gt;
+      &lt;td&gt;[0.0, 0.0, 204.0]&lt;/td&gt;
+      &lt;td&gt;[0.0, 0.0, 229.5]&lt;/td&gt;
+      &lt;td&gt;[0.0, 0.0, 255.0]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;green&lt;/th&gt;
+      &lt;td&gt;[0.0, 0.0, 0.0]&lt;/td&gt;
+      &lt;td&gt;[0.0, 25.5, 0.0]&lt;/td&gt;
+      &lt;td&gt;[0.0, 51.0, 0.0]&lt;/td&gt;
+      &lt;td&gt;[0.0, 76.50000000000001, 0.0]&lt;/td&gt;
+      &lt;td&gt;[0.0, 102.0, 0.0]&lt;/td&gt;
+      &lt;td&gt;[0.0, 127.5, 0.0]&lt;/td&gt;
+      &lt;td&gt;[0.0, 153.00000000000003, 0.0]&lt;/td&gt;
+      &lt;td&gt;[0.0, 178.50000000000003, 0.0]&lt;/td&gt;
+      &lt;td&gt;[0.0, 204.0, 0.0]&lt;/td&gt;
+      &lt;td&gt;[0.0, 229.5, 0.0]&lt;/td&gt;
+      &lt;td&gt;[0.0, 255.0, 0.0]&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;that may be stylized using the &lt;code&gt;df.style&lt;/code&gt; feature&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [16]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;applymap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rgb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
+
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;&lt;style type="text/css"&gt;
+#T_dd8aa_row0_col0, #T_dd8aa_row1_col0, #T_dd8aa_row2_col0 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 0.0);
+}
+#T_dd8aa_row0_col1 {
+  font-size: 0px;
+  background-color: rgb(25.5, 0.0, 0.0);
+}
+#T_dd8aa_row0_col2 {
+  font-size: 0px;
+  background-color: rgb(51.0, 0.0, 0.0);
+}
+#T_dd8aa_row0_col3 {
+  font-size: 0px;
+  background-color: rgb(76.50000000000001, 0.0, 0.0);
+}
+#T_dd8aa_row0_col4 {
+  font-size: 0px;
+  background-color: rgb(102.0, 0.0, 0.0);
+}
+#T_dd8aa_row0_col5 {
+  font-size: 0px;
+  background-color: rgb(127.5, 0.0, 0.0);
+}
+#T_dd8aa_row0_col6 {
+  font-size: 0px;
+  background-color: rgb(153.00000000000003, 0.0, 0.0);
+}
+#T_dd8aa_row0_col7 {
+  font-size: 0px;
+  background-color: rgb(178.50000000000003, 0.0, 0.0);
+}
+#T_dd8aa_row0_col8 {
+  font-size: 0px;
+  background-color: rgb(204.0, 0.0, 0.0);
+}
+#T_dd8aa_row0_col9 {
+  font-size: 0px;
+  background-color: rgb(229.5, 0.0, 0.0);
+}
+#T_dd8aa_row0_col10 {
+  font-size: 0px;
+  background-color: rgb(255.0, 0.0, 0.0);
+}
+#T_dd8aa_row1_col1 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 25.5);
+}
+#T_dd8aa_row1_col2 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 51.0);
+}
+#T_dd8aa_row1_col3 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 76.50000000000001);
+}
+#T_dd8aa_row1_col4 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 102.0);
+}
+#T_dd8aa_row1_col5 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 127.5);
+}
+#T_dd8aa_row1_col6 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 153.00000000000003);
+}
+#T_dd8aa_row1_col7 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 178.50000000000003);
+}
+#T_dd8aa_row1_col8 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 204.0);
+}
+#T_dd8aa_row1_col9 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 229.5);
+}
+#T_dd8aa_row1_col10 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 255.0);
+}
+#T_dd8aa_row2_col1 {
+  font-size: 0px;
+  background-color: rgb(0.0, 25.5, 0.0);
+}
+#T_dd8aa_row2_col2 {
+  font-size: 0px;
+  background-color: rgb(0.0, 51.0, 0.0);
+}
+#T_dd8aa_row2_col3 {
+  font-size: 0px;
+  background-color: rgb(0.0, 76.50000000000001, 0.0);
+}
+#T_dd8aa_row2_col4 {
+  font-size: 0px;
+  background-color: rgb(0.0, 102.0, 0.0);
+}
+#T_dd8aa_row2_col5 {
+  font-size: 0px;
+  background-color: rgb(0.0, 127.5, 0.0);
+}
+#T_dd8aa_row2_col6 {
+  font-size: 0px;
+  background-color: rgb(0.0, 153.00000000000003, 0.0);
+}
+#T_dd8aa_row2_col7 {
+  font-size: 0px;
+  background-color: rgb(0.0, 178.50000000000003, 0.0);
+}
+#T_dd8aa_row2_col8 {
+  font-size: 0px;
+  background-color: rgb(0.0, 204.0, 0.0);
+}
+#T_dd8aa_row2_col9 {
+  font-size: 0px;
+  background-color: rgb(0.0, 229.5, 0.0);
+}
+#T_dd8aa_row2_col10 {
+  font-size: 0px;
+  background-color: rgb(0.0, 255.0, 0.0);
+}
+&lt;/style&gt;
+&lt;table id="T_dd8aa_"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th class="blank level0"&gt; &lt;/th&gt;
+      &lt;th class="col_heading level0 col0"&gt;0&lt;/th&gt;
+      &lt;th class="col_heading level0 col1"&gt;1&lt;/th&gt;
+      &lt;th class="col_heading level0 col2"&gt;2&lt;/th&gt;
+      &lt;th class="col_heading level0 col3"&gt;3&lt;/th&gt;
+      &lt;th class="col_heading level0 col4"&gt;4&lt;/th&gt;
+      &lt;th class="col_heading level0 col5"&gt;5&lt;/th&gt;
+      &lt;th class="col_heading level0 col6"&gt;6&lt;/th&gt;
+      &lt;th class="col_heading level0 col7"&gt;7&lt;/th&gt;
+      &lt;th class="col_heading level0 col8"&gt;8&lt;/th&gt;
+      &lt;th class="col_heading level0 col9"&gt;9&lt;/th&gt;
+      &lt;th class="col_heading level0 col10"&gt;10&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th id="T_dd8aa_level0_row0" class="row_heading level0 row0"&gt;red&lt;/th&gt;
+      &lt;td id="T_dd8aa_row0_col0" class="data row0 col0"&gt;[0. 0. 0.]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row0_col1" class="data row0 col1"&gt;[25.5  0.   0. ]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row0_col2" class="data row0 col2"&gt;[51.  0.  0.]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row0_col3" class="data row0 col3"&gt;[76.5  0.   0. ]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row0_col4" class="data row0 col4"&gt;[102.   0.   0.]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row0_col5" class="data row0 col5"&gt;[127.5   0.    0. ]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row0_col6" class="data row0 col6"&gt;[153.   0.   0.]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row0_col7" class="data row0 col7"&gt;[178.5   0.    0. ]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row0_col8" class="data row0 col8"&gt;[204.   0.   0.]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row0_col9" class="data row0 col9"&gt;[229.5   0.    0. ]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row0_col10" class="data row0 col10"&gt;[255.   0.   0.]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th id="T_dd8aa_level0_row1" class="row_heading level0 row1"&gt;blue&lt;/th&gt;
+      &lt;td id="T_dd8aa_row1_col0" class="data row1 col0"&gt;[0. 0. 0.]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row1_col1" class="data row1 col1"&gt;[ 0.   0.  25.5]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row1_col2" class="data row1 col2"&gt;[ 0.  0. 51.]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row1_col3" class="data row1 col3"&gt;[ 0.   0.  76.5]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row1_col4" class="data row1 col4"&gt;[  0.   0. 102.]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row1_col5" class="data row1 col5"&gt;[  0.    0.  127.5]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row1_col6" class="data row1 col6"&gt;[  0.   0. 153.]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row1_col7" class="data row1 col7"&gt;[  0.    0.  178.5]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row1_col8" class="data row1 col8"&gt;[  0.   0. 204.]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row1_col9" class="data row1 col9"&gt;[  0.    0.  229.5]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row1_col10" class="data row1 col10"&gt;[  0.   0. 255.]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th id="T_dd8aa_level0_row2" class="row_heading level0 row2"&gt;green&lt;/th&gt;
+      &lt;td id="T_dd8aa_row2_col0" class="data row2 col0"&gt;[0. 0. 0.]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row2_col1" class="data row2 col1"&gt;[ 0.  25.5  0. ]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row2_col2" class="data row2 col2"&gt;[ 0. 51.  0.]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row2_col3" class="data row2 col3"&gt;[ 0.  76.5  0. ]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row2_col4" class="data row2 col4"&gt;[  0. 102.   0.]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row2_col5" class="data row2 col5"&gt;[  0.  127.5   0. ]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row2_col6" class="data row2 col6"&gt;[  0. 153.   0.]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row2_col7" class="data row2 col7"&gt;[  0.  178.5   0. ]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row2_col8" class="data row2 col8"&gt;[  0. 204.   0.]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row2_col9" class="data row2 col9"&gt;[  0.  229.5   0. ]&lt;/td&gt;
+      &lt;td id="T_dd8aa_row2_col10" class="data row2 col10"&gt;[  0. 255.   0.]&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;from our &lt;code&gt;df&lt;/code&gt; containing a primary palette we can build a &lt;code&gt;secondary&lt;/code&gt; palette.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [17]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="n"&gt;secondary&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;     &lt;span class="n"&gt;pandas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concat&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;    
+        &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"red"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"blue"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"violet"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+        &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"red"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"green"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"yellow"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+        &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"blue"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"green"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"cyan"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;secondary&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;applymap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rgb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[17]:&lt;/div&gt;
+
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;&lt;style type="text/css"&gt;
+#T_7fb02_row0_col0, #T_7fb02_row1_col0, #T_7fb02_row2_col0 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 0.0);
+}
+#T_7fb02_row0_col1 {
+  font-size: 0px;
+  background-color: rgb(25.5, 0.0, 25.5);
+}
+#T_7fb02_row0_col2 {
+  font-size: 0px;
+  background-color: rgb(51.0, 0.0, 51.0);
+}
+#T_7fb02_row0_col3 {
+  font-size: 0px;
+  background-color: rgb(76.50000000000001, 0.0, 76.50000000000001);
+}
+#T_7fb02_row0_col4 {
+  font-size: 0px;
+  background-color: rgb(102.0, 0.0, 102.0);
+}
+#T_7fb02_row0_col5 {
+  font-size: 0px;
+  background-color: rgb(127.5, 0.0, 127.5);
+}
+#T_7fb02_row0_col6 {
+  font-size: 0px;
+  background-color: rgb(153.00000000000003, 0.0, 153.00000000000003);
+}
+#T_7fb02_row0_col7 {
+  font-size: 0px;
+  background-color: rgb(178.50000000000003, 0.0, 178.50000000000003);
+}
+#T_7fb02_row0_col8 {
+  font-size: 0px;
+  background-color: rgb(204.0, 0.0, 204.0);
+}
+#T_7fb02_row0_col9 {
+  font-size: 0px;
+  background-color: rgb(229.5, 0.0, 229.5);
+}
+#T_7fb02_row0_col10 {
+  font-size: 0px;
+  background-color: rgb(255.0, 0.0, 255.0);
+}
+#T_7fb02_row1_col1 {
+  font-size: 0px;
+  background-color: rgb(25.5, 25.5, 0.0);
+}
+#T_7fb02_row1_col2 {
+  font-size: 0px;
+  background-color: rgb(51.0, 51.0, 0.0);
+}
+#T_7fb02_row1_col3 {
+  font-size: 0px;
+  background-color: rgb(76.50000000000001, 76.50000000000001, 0.0);
+}
+#T_7fb02_row1_col4 {
+  font-size: 0px;
+  background-color: rgb(102.0, 102.0, 0.0);
+}
+#T_7fb02_row1_col5 {
+  font-size: 0px;
+  background-color: rgb(127.5, 127.5, 0.0);
+}
+#T_7fb02_row1_col6 {
+  font-size: 0px;
+  background-color: rgb(153.00000000000003, 153.00000000000003, 0.0);
+}
+#T_7fb02_row1_col7 {
+  font-size: 0px;
+  background-color: rgb(178.50000000000003, 178.50000000000003, 0.0);
+}
+#T_7fb02_row1_col8 {
+  font-size: 0px;
+  background-color: rgb(204.0, 204.0, 0.0);
+}
+#T_7fb02_row1_col9 {
+  font-size: 0px;
+  background-color: rgb(229.5, 229.5, 0.0);
+}
+#T_7fb02_row1_col10 {
+  font-size: 0px;
+  background-color: rgb(255.0, 255.0, 0.0);
+}
+#T_7fb02_row2_col1 {
+  font-size: 0px;
+  background-color: rgb(0.0, 25.5, 25.5);
+}
+#T_7fb02_row2_col2 {
+  font-size: 0px;
+  background-color: rgb(0.0, 51.0, 51.0);
+}
+#T_7fb02_row2_col3 {
+  font-size: 0px;
+  background-color: rgb(0.0, 76.50000000000001, 76.50000000000001);
+}
+#T_7fb02_row2_col4 {
+  font-size: 0px;
+  background-color: rgb(0.0, 102.0, 102.0);
+}
+#T_7fb02_row2_col5 {
+  font-size: 0px;
+  background-color: rgb(0.0, 127.5, 127.5);
+}
+#T_7fb02_row2_col6 {
+  font-size: 0px;
+  background-color: rgb(0.0, 153.00000000000003, 153.00000000000003);
+}
+#T_7fb02_row2_col7 {
+  font-size: 0px;
+  background-color: rgb(0.0, 178.50000000000003, 178.50000000000003);
+}
+#T_7fb02_row2_col8 {
+  font-size: 0px;
+  background-color: rgb(0.0, 204.0, 204.0);
+}
+#T_7fb02_row2_col9 {
+  font-size: 0px;
+  background-color: rgb(0.0, 229.5, 229.5);
+}
+#T_7fb02_row2_col10 {
+  font-size: 0px;
+  background-color: rgb(0.0, 255.0, 255.0);
+}
+&lt;/style&gt;
+&lt;table id="T_7fb02_"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th class="blank level0"&gt; &lt;/th&gt;
+      &lt;th class="col_heading level0 col0"&gt;0&lt;/th&gt;
+      &lt;th class="col_heading level0 col1"&gt;1&lt;/th&gt;
+      &lt;th class="col_heading level0 col2"&gt;2&lt;/th&gt;
+      &lt;th class="col_heading level0 col3"&gt;3&lt;/th&gt;
+      &lt;th class="col_heading level0 col4"&gt;4&lt;/th&gt;
+      &lt;th class="col_heading level0 col5"&gt;5&lt;/th&gt;
+      &lt;th class="col_heading level0 col6"&gt;6&lt;/th&gt;
+      &lt;th class="col_heading level0 col7"&gt;7&lt;/th&gt;
+      &lt;th class="col_heading level0 col8"&gt;8&lt;/th&gt;
+      &lt;th class="col_heading level0 col9"&gt;9&lt;/th&gt;
+      &lt;th class="col_heading level0 col10"&gt;10&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th id="T_7fb02_level0_row0" class="row_heading level0 row0"&gt;violet&lt;/th&gt;
+      &lt;td id="T_7fb02_row0_col0" class="data row0 col0"&gt;[0. 0. 0.]&lt;/td&gt;
+      &lt;td id="T_7fb02_row0_col1" class="data row0 col1"&gt;[25.5  0.  25.5]&lt;/td&gt;
+      &lt;td id="T_7fb02_row0_col2" class="data row0 col2"&gt;[51.  0. 51.]&lt;/td&gt;
+      &lt;td id="T_7fb02_row0_col3" class="data row0 col3"&gt;[76.5  0.  76.5]&lt;/td&gt;
+      &lt;td id="T_7fb02_row0_col4" class="data row0 col4"&gt;[102.   0. 102.]&lt;/td&gt;
+      &lt;td id="T_7fb02_row0_col5" class="data row0 col5"&gt;[127.5   0.  127.5]&lt;/td&gt;
+      &lt;td id="T_7fb02_row0_col6" class="data row0 col6"&gt;[153.   0. 153.]&lt;/td&gt;
+      &lt;td id="T_7fb02_row0_col7" class="data row0 col7"&gt;[178.5   0.  178.5]&lt;/td&gt;
+      &lt;td id="T_7fb02_row0_col8" class="data row0 col8"&gt;[204.   0. 204.]&lt;/td&gt;
+      &lt;td id="T_7fb02_row0_col9" class="data row0 col9"&gt;[229.5   0.  229.5]&lt;/td&gt;
+      &lt;td id="T_7fb02_row0_col10" class="data row0 col10"&gt;[255.   0. 255.]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th id="T_7fb02_level0_row1" class="row_heading level0 row1"&gt;yellow&lt;/th&gt;
+      &lt;td id="T_7fb02_row1_col0" class="data row1 col0"&gt;[0. 0. 0.]&lt;/td&gt;
+      &lt;td id="T_7fb02_row1_col1" class="data row1 col1"&gt;[25.5 25.5  0. ]&lt;/td&gt;
+      &lt;td id="T_7fb02_row1_col2" class="data row1 col2"&gt;[51. 51.  0.]&lt;/td&gt;
+      &lt;td id="T_7fb02_row1_col3" class="data row1 col3"&gt;[76.5 76.5  0. ]&lt;/td&gt;
+      &lt;td id="T_7fb02_row1_col4" class="data row1 col4"&gt;[102. 102.   0.]&lt;/td&gt;
+      &lt;td id="T_7fb02_row1_col5" class="data row1 col5"&gt;[127.5 127.5   0. ]&lt;/td&gt;
+      &lt;td id="T_7fb02_row1_col6" class="data row1 col6"&gt;[153. 153.   0.]&lt;/td&gt;
+      &lt;td id="T_7fb02_row1_col7" class="data row1 col7"&gt;[178.5 178.5   0. ]&lt;/td&gt;
+      &lt;td id="T_7fb02_row1_col8" class="data row1 col8"&gt;[204. 204.   0.]&lt;/td&gt;
+      &lt;td id="T_7fb02_row1_col9" class="data row1 col9"&gt;[229.5 229.5   0. ]&lt;/td&gt;
+      &lt;td id="T_7fb02_row1_col10" class="data row1 col10"&gt;[255. 255.   0.]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th id="T_7fb02_level0_row2" class="row_heading level0 row2"&gt;cyan&lt;/th&gt;
+      &lt;td id="T_7fb02_row2_col0" class="data row2 col0"&gt;[0. 0. 0.]&lt;/td&gt;
+      &lt;td id="T_7fb02_row2_col1" class="data row2 col1"&gt;[ 0.  25.5 25.5]&lt;/td&gt;
+      &lt;td id="T_7fb02_row2_col2" class="data row2 col2"&gt;[ 0. 51. 51.]&lt;/td&gt;
+      &lt;td id="T_7fb02_row2_col3" class="data row2 col3"&gt;[ 0.  76.5 76.5]&lt;/td&gt;
+      &lt;td id="T_7fb02_row2_col4" class="data row2 col4"&gt;[  0. 102. 102.]&lt;/td&gt;
+      &lt;td id="T_7fb02_row2_col5" class="data row2 col5"&gt;[  0.  127.5 127.5]&lt;/td&gt;
+      &lt;td id="T_7fb02_row2_col6" class="data row2 col6"&gt;[  0. 153. 153.]&lt;/td&gt;
+      &lt;td id="T_7fb02_row2_col7" class="data row2 col7"&gt;[  0.  178.5 178.5]&lt;/td&gt;
+      &lt;td id="T_7fb02_row2_col8" class="data row2 col8"&gt;[  0. 204. 204.]&lt;/td&gt;
+      &lt;td id="T_7fb02_row2_col9" class="data row2 col9"&gt;[  0.  229.5 229.5]&lt;/td&gt;
+      &lt;td id="T_7fb02_row2_col10" class="data row2 col10"&gt;[  0. 255. 255.]&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;they can all be recombined together on their respective order.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [19]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="nb"&gt;all&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concat&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;secondary&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+        &lt;span class="s2"&gt;"red violet blue cyan green yellow"&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;()]&lt;/span&gt;
+
+    &lt;span class="nb"&gt;all&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;applymap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rgb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[19]:&lt;/div&gt;
+
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;&lt;style type="text/css"&gt;
+#T_5b15c_row0_col0, #T_5b15c_row1_col0, #T_5b15c_row2_col0, #T_5b15c_row3_col0, #T_5b15c_row4_col0, #T_5b15c_row5_col0 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 0.0);
+}
+#T_5b15c_row0_col1 {
+  font-size: 0px;
+  background-color: rgb(25.5, 0.0, 0.0);
+}
+#T_5b15c_row0_col2 {
+  font-size: 0px;
+  background-color: rgb(51.0, 0.0, 0.0);
+}
+#T_5b15c_row0_col3 {
+  font-size: 0px;
+  background-color: rgb(76.50000000000001, 0.0, 0.0);
+}
+#T_5b15c_row0_col4 {
+  font-size: 0px;
+  background-color: rgb(102.0, 0.0, 0.0);
+}
+#T_5b15c_row0_col5 {
+  font-size: 0px;
+  background-color: rgb(127.5, 0.0, 0.0);
+}
+#T_5b15c_row0_col6 {
+  font-size: 0px;
+  background-color: rgb(153.00000000000003, 0.0, 0.0);
+}
+#T_5b15c_row0_col7 {
+  font-size: 0px;
+  background-color: rgb(178.50000000000003, 0.0, 0.0);
+}
+#T_5b15c_row0_col8 {
+  font-size: 0px;
+  background-color: rgb(204.0, 0.0, 0.0);
+}
+#T_5b15c_row0_col9 {
+  font-size: 0px;
+  background-color: rgb(229.5, 0.0, 0.0);
+}
+#T_5b15c_row0_col10 {
+  font-size: 0px;
+  background-color: rgb(255.0, 0.0, 0.0);
+}
+#T_5b15c_row1_col1 {
+  font-size: 0px;
+  background-color: rgb(25.5, 0.0, 25.5);
+}
+#T_5b15c_row1_col2 {
+  font-size: 0px;
+  background-color: rgb(51.0, 0.0, 51.0);
+}
+#T_5b15c_row1_col3 {
+  font-size: 0px;
+  background-color: rgb(76.50000000000001, 0.0, 76.50000000000001);
+}
+#T_5b15c_row1_col4 {
+  font-size: 0px;
+  background-color: rgb(102.0, 0.0, 102.0);
+}
+#T_5b15c_row1_col5 {
+  font-size: 0px;
+  background-color: rgb(127.5, 0.0, 127.5);
+}
+#T_5b15c_row1_col6 {
+  font-size: 0px;
+  background-color: rgb(153.00000000000003, 0.0, 153.00000000000003);
+}
+#T_5b15c_row1_col7 {
+  font-size: 0px;
+  background-color: rgb(178.50000000000003, 0.0, 178.50000000000003);
+}
+#T_5b15c_row1_col8 {
+  font-size: 0px;
+  background-color: rgb(204.0, 0.0, 204.0);
+}
+#T_5b15c_row1_col9 {
+  font-size: 0px;
+  background-color: rgb(229.5, 0.0, 229.5);
+}
+#T_5b15c_row1_col10 {
+  font-size: 0px;
+  background-color: rgb(255.0, 0.0, 255.0);
+}
+#T_5b15c_row2_col1 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 25.5);
+}
+#T_5b15c_row2_col2 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 51.0);
+}
+#T_5b15c_row2_col3 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 76.50000000000001);
+}
+#T_5b15c_row2_col4 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 102.0);
+}
+#T_5b15c_row2_col5 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 127.5);
+}
+#T_5b15c_row2_col6 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 153.00000000000003);
+}
+#T_5b15c_row2_col7 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 178.50000000000003);
+}
+#T_5b15c_row2_col8 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 204.0);
+}
+#T_5b15c_row2_col9 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 229.5);
+}
+#T_5b15c_row2_col10 {
+  font-size: 0px;
+  background-color: rgb(0.0, 0.0, 255.0);
+}
+#T_5b15c_row3_col1 {
+  font-size: 0px;
+  background-color: rgb(0.0, 25.5, 25.5);
+}
+#T_5b15c_row3_col2 {
+  font-size: 0px;
+  background-color: rgb(0.0, 51.0, 51.0);
+}
+#T_5b15c_row3_col3 {
+  font-size: 0px;
+  background-color: rgb(0.0, 76.50000000000001, 76.50000000000001);
+}
+#T_5b15c_row3_col4 {
+  font-size: 0px;
+  background-color: rgb(0.0, 102.0, 102.0);
+}
+#T_5b15c_row3_col5 {
+  font-size: 0px;
+  background-color: rgb(0.0, 127.5, 127.5);
+}
+#T_5b15c_row3_col6 {
+  font-size: 0px;
+  background-color: rgb(0.0, 153.00000000000003, 153.00000000000003);
+}
+#T_5b15c_row3_col7 {
+  font-size: 0px;
+  background-color: rgb(0.0, 178.50000000000003, 178.50000000000003);
+}
+#T_5b15c_row3_col8 {
+  font-size: 0px;
+  background-color: rgb(0.0, 204.0, 204.0);
+}
+#T_5b15c_row3_col9 {
+  font-size: 0px;
+  background-color: rgb(0.0, 229.5, 229.5);
+}
+#T_5b15c_row3_col10 {
+  font-size: 0px;
+  background-color: rgb(0.0, 255.0, 255.0);
+}
+#T_5b15c_row4_col1 {
+  font-size: 0px;
+  background-color: rgb(0.0, 25.5, 0.0);
+}
+#T_5b15c_row4_col2 {
+  font-size: 0px;
+  background-color: rgb(0.0, 51.0, 0.0);
+}
+#T_5b15c_row4_col3 {
+  font-size: 0px;
+  background-color: rgb(0.0, 76.50000000000001, 0.0);
+}
+#T_5b15c_row4_col4 {
+  font-size: 0px;
+  background-color: rgb(0.0, 102.0, 0.0);
+}
+#T_5b15c_row4_col5 {
+  font-size: 0px;
+  background-color: rgb(0.0, 127.5, 0.0);
+}
+#T_5b15c_row4_col6 {
+  font-size: 0px;
+  background-color: rgb(0.0, 153.00000000000003, 0.0);
+}
+#T_5b15c_row4_col7 {
+  font-size: 0px;
+  background-color: rgb(0.0, 178.50000000000003, 0.0);
+}
+#T_5b15c_row4_col8 {
+  font-size: 0px;
+  background-color: rgb(0.0, 204.0, 0.0);
+}
+#T_5b15c_row4_col9 {
+  font-size: 0px;
+  background-color: rgb(0.0, 229.5, 0.0);
+}
+#T_5b15c_row4_col10 {
+  font-size: 0px;
+  background-color: rgb(0.0, 255.0, 0.0);
+}
+#T_5b15c_row5_col1 {
+  font-size: 0px;
+  background-color: rgb(25.5, 25.5, 0.0);
+}
+#T_5b15c_row5_col2 {
+  font-size: 0px;
+  background-color: rgb(51.0, 51.0, 0.0);
+}
+#T_5b15c_row5_col3 {
+  font-size: 0px;
+  background-color: rgb(76.50000000000001, 76.50000000000001, 0.0);
+}
+#T_5b15c_row5_col4 {
+  font-size: 0px;
+  background-color: rgb(102.0, 102.0, 0.0);
+}
+#T_5b15c_row5_col5 {
+  font-size: 0px;
+  background-color: rgb(127.5, 127.5, 0.0);
+}
+#T_5b15c_row5_col6 {
+  font-size: 0px;
+  background-color: rgb(153.00000000000003, 153.00000000000003, 0.0);
+}
+#T_5b15c_row5_col7 {
+  font-size: 0px;
+  background-color: rgb(178.50000000000003, 178.50000000000003, 0.0);
+}
+#T_5b15c_row5_col8 {
+  font-size: 0px;
+  background-color: rgb(204.0, 204.0, 0.0);
+}
+#T_5b15c_row5_col9 {
+  font-size: 0px;
+  background-color: rgb(229.5, 229.5, 0.0);
+}
+#T_5b15c_row5_col10 {
+  font-size: 0px;
+  background-color: rgb(255.0, 255.0, 0.0);
+}
+&lt;/style&gt;
+&lt;table id="T_5b15c_"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th class="blank level0"&gt; &lt;/th&gt;
+      &lt;th class="col_heading level0 col0"&gt;0&lt;/th&gt;
+      &lt;th class="col_heading level0 col1"&gt;1&lt;/th&gt;
+      &lt;th class="col_heading level0 col2"&gt;2&lt;/th&gt;
+      &lt;th class="col_heading level0 col3"&gt;3&lt;/th&gt;
+      &lt;th class="col_heading level0 col4"&gt;4&lt;/th&gt;
+      &lt;th class="col_heading level0 col5"&gt;5&lt;/th&gt;
+      &lt;th class="col_heading level0 col6"&gt;6&lt;/th&gt;
+      &lt;th class="col_heading level0 col7"&gt;7&lt;/th&gt;
+      &lt;th class="col_heading level0 col8"&gt;8&lt;/th&gt;
+      &lt;th class="col_heading level0 col9"&gt;9&lt;/th&gt;
+      &lt;th class="col_heading level0 col10"&gt;10&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th id="T_5b15c_level0_row0" class="row_heading level0 row0"&gt;red&lt;/th&gt;
+      &lt;td id="T_5b15c_row0_col0" class="data row0 col0"&gt;[0. 0. 0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row0_col1" class="data row0 col1"&gt;[25.5  0.   0. ]&lt;/td&gt;
+      &lt;td id="T_5b15c_row0_col2" class="data row0 col2"&gt;[51.  0.  0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row0_col3" class="data row0 col3"&gt;[76.5  0.   0. ]&lt;/td&gt;
+      &lt;td id="T_5b15c_row0_col4" class="data row0 col4"&gt;[102.   0.   0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row0_col5" class="data row0 col5"&gt;[127.5   0.    0. ]&lt;/td&gt;
+      &lt;td id="T_5b15c_row0_col6" class="data row0 col6"&gt;[153.   0.   0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row0_col7" class="data row0 col7"&gt;[178.5   0.    0. ]&lt;/td&gt;
+      &lt;td id="T_5b15c_row0_col8" class="data row0 col8"&gt;[204.   0.   0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row0_col9" class="data row0 col9"&gt;[229.5   0.    0. ]&lt;/td&gt;
+      &lt;td id="T_5b15c_row0_col10" class="data row0 col10"&gt;[255.   0.   0.]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th id="T_5b15c_level0_row1" class="row_heading level0 row1"&gt;violet&lt;/th&gt;
+      &lt;td id="T_5b15c_row1_col0" class="data row1 col0"&gt;[0. 0. 0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row1_col1" class="data row1 col1"&gt;[25.5  0.  25.5]&lt;/td&gt;
+      &lt;td id="T_5b15c_row1_col2" class="data row1 col2"&gt;[51.  0. 51.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row1_col3" class="data row1 col3"&gt;[76.5  0.  76.5]&lt;/td&gt;
+      &lt;td id="T_5b15c_row1_col4" class="data row1 col4"&gt;[102.   0. 102.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row1_col5" class="data row1 col5"&gt;[127.5   0.  127.5]&lt;/td&gt;
+      &lt;td id="T_5b15c_row1_col6" class="data row1 col6"&gt;[153.   0. 153.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row1_col7" class="data row1 col7"&gt;[178.5   0.  178.5]&lt;/td&gt;
+      &lt;td id="T_5b15c_row1_col8" class="data row1 col8"&gt;[204.   0. 204.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row1_col9" class="data row1 col9"&gt;[229.5   0.  229.5]&lt;/td&gt;
+      &lt;td id="T_5b15c_row1_col10" class="data row1 col10"&gt;[255.   0. 255.]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th id="T_5b15c_level0_row2" class="row_heading level0 row2"&gt;blue&lt;/th&gt;
+      &lt;td id="T_5b15c_row2_col0" class="data row2 col0"&gt;[0. 0. 0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row2_col1" class="data row2 col1"&gt;[ 0.   0.  25.5]&lt;/td&gt;
+      &lt;td id="T_5b15c_row2_col2" class="data row2 col2"&gt;[ 0.  0. 51.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row2_col3" class="data row2 col3"&gt;[ 0.   0.  76.5]&lt;/td&gt;
+      &lt;td id="T_5b15c_row2_col4" class="data row2 col4"&gt;[  0.   0. 102.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row2_col5" class="data row2 col5"&gt;[  0.    0.  127.5]&lt;/td&gt;
+      &lt;td id="T_5b15c_row2_col6" class="data row2 col6"&gt;[  0.   0. 153.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row2_col7" class="data row2 col7"&gt;[  0.    0.  178.5]&lt;/td&gt;
+      &lt;td id="T_5b15c_row2_col8" class="data row2 col8"&gt;[  0.   0. 204.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row2_col9" class="data row2 col9"&gt;[  0.    0.  229.5]&lt;/td&gt;
+      &lt;td id="T_5b15c_row2_col10" class="data row2 col10"&gt;[  0.   0. 255.]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th id="T_5b15c_level0_row3" class="row_heading level0 row3"&gt;cyan&lt;/th&gt;
+      &lt;td id="T_5b15c_row3_col0" class="data row3 col0"&gt;[0. 0. 0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row3_col1" class="data row3 col1"&gt;[ 0.  25.5 25.5]&lt;/td&gt;
+      &lt;td id="T_5b15c_row3_col2" class="data row3 col2"&gt;[ 0. 51. 51.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row3_col3" class="data row3 col3"&gt;[ 0.  76.5 76.5]&lt;/td&gt;
+      &lt;td id="T_5b15c_row3_col4" class="data row3 col4"&gt;[  0. 102. 102.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row3_col5" class="data row3 col5"&gt;[  0.  127.5 127.5]&lt;/td&gt;
+      &lt;td id="T_5b15c_row3_col6" class="data row3 col6"&gt;[  0. 153. 153.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row3_col7" class="data row3 col7"&gt;[  0.  178.5 178.5]&lt;/td&gt;
+      &lt;td id="T_5b15c_row3_col8" class="data row3 col8"&gt;[  0. 204. 204.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row3_col9" class="data row3 col9"&gt;[  0.  229.5 229.5]&lt;/td&gt;
+      &lt;td id="T_5b15c_row3_col10" class="data row3 col10"&gt;[  0. 255. 255.]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th id="T_5b15c_level0_row4" class="row_heading level0 row4"&gt;green&lt;/th&gt;
+      &lt;td id="T_5b15c_row4_col0" class="data row4 col0"&gt;[0. 0. 0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row4_col1" class="data row4 col1"&gt;[ 0.  25.5  0. ]&lt;/td&gt;
+      &lt;td id="T_5b15c_row4_col2" class="data row4 col2"&gt;[ 0. 51.  0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row4_col3" class="data row4 col3"&gt;[ 0.  76.5  0. ]&lt;/td&gt;
+      &lt;td id="T_5b15c_row4_col4" class="data row4 col4"&gt;[  0. 102.   0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row4_col5" class="data row4 col5"&gt;[  0.  127.5   0. ]&lt;/td&gt;
+      &lt;td id="T_5b15c_row4_col6" class="data row4 col6"&gt;[  0. 153.   0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row4_col7" class="data row4 col7"&gt;[  0.  178.5   0. ]&lt;/td&gt;
+      &lt;td id="T_5b15c_row4_col8" class="data row4 col8"&gt;[  0. 204.   0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row4_col9" class="data row4 col9"&gt;[  0.  229.5   0. ]&lt;/td&gt;
+      &lt;td id="T_5b15c_row4_col10" class="data row4 col10"&gt;[  0. 255.   0.]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th id="T_5b15c_level0_row5" class="row_heading level0 row5"&gt;yellow&lt;/th&gt;
+      &lt;td id="T_5b15c_row5_col0" class="data row5 col0"&gt;[0. 0. 0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row5_col1" class="data row5 col1"&gt;[25.5 25.5  0. ]&lt;/td&gt;
+      &lt;td id="T_5b15c_row5_col2" class="data row5 col2"&gt;[51. 51.  0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row5_col3" class="data row5 col3"&gt;[76.5 76.5  0. ]&lt;/td&gt;
+      &lt;td id="T_5b15c_row5_col4" class="data row5 col4"&gt;[102. 102.   0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row5_col5" class="data row5 col5"&gt;[127.5 127.5   0. ]&lt;/td&gt;
+      &lt;td id="T_5b15c_row5_col6" class="data row5 col6"&gt;[153. 153.   0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row5_col7" class="data row5 col7"&gt;[178.5 178.5   0. ]&lt;/td&gt;
+      &lt;td id="T_5b15c_row5_col8" class="data row5 col8"&gt;[204. 204.   0.]&lt;/td&gt;
+      &lt;td id="T_5b15c_row5_col9" class="data row5 col9"&gt;[229.5 229.5   0. ]&lt;/td&gt;
+      &lt;td id="T_5b15c_row5_col10" class="data row5 col10"&gt;[255. 255.   0.]&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;</description><guid>/posts/e2cae138e4bb043cd277709ff45ba8a3/2021-10-11-colorizing/</guid><pubDate>Wed, 13 Oct 2021 00:00:00 GMT</pubDate></item></channel></rss>

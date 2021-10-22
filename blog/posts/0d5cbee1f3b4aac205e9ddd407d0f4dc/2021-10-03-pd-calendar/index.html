@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2021-10-03-pd-calendar | media</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
+<link rel="canonical" href=".">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="">
+<link rel="prev" href="../../e2cae138e4bb043cd277709ff45ba8a3/2021-10-11-colorizing/" title="2021-10-11-colorizing" type="text/html">
+<meta property="og:site_name" content="media">
+<meta property="og:title" content="2021-10-03-pd-calendar">
+<meta property="og:url" content="/posts/0d5cbee1f3b4aac205e9ddd407d0f4dc/2021-10-03-pd-calendar/">
+<meta property="og:description" content="what will we learn when we make calendars in pandas?¶below we are going to make calendars using pandas and explore the pandas api while we're at it. we'll explore different parts of thr pandas api lik">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-10-13T00:00:00Z">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../../../">
+
+            <span id="blog-title">media</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="index.ipynb" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100"></ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">2021-10-03-pd-calendar</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2021-10-13T00:00:00Z" itemprop="datePublished" title="2021-10-13 00:00">2021-10-13 00:00</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/_posts/0d5cbee1f3b4aac205e9ddd407d0f4dc/2021-10-03-pd-calendar.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="what-will-we-learn-when-we-make-calendars-in-pandas?">what will we learn when <em>we make calendars in pandas?</em><a class="anchor-link" href="#what-will-we-learn-when-we-make-calendars-in-pandas?">¶</a>
+</h2>
+<p>below we are going to make calendars using pandas and explore the pandas api while we're at it. we'll explore different parts of thr <code>pandas</code> api like:</p>
+<ul>
+<li>
+<code>pandas.date_range</code> to begin our work with the calendar</li>
+<li>
+<code>pandas.DataFrame.assign</code> to set new columns on our dataframe</li>
+<li>
+<code>df.apply(pandas.Series)</code> to wide dataframes on container elements</li>
+<li>
+<code>pandas.DataFrame.unstack</code> to change the shape of our dataframe by translating row indexes to columns.</li>
+<li>
+<code>pandas.DataFrame.style</code> to use a dataframe to provide cell level styling in our output.</li>
+<li>we used <code>pandas.DataFrame.groupby</code> in a for loop, as an iterator, which is quite a powerful technique for inspecting grouped operations<!-- TEASER_END -->
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="kn">import</span> <span class="nn">pandas</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>to start with, we'll use <code>pandas</code> date/time tooling to construct the days of the year.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>pandas.date_range</code> is basically a smart <code>range</code> function for dates, we've defined the steps to be daily between the start and stop dates. it is really wise in <code>pandas</code> to work with your time and dates using their <code>pandas</code> types, there are better api affordances that remaining in an integer timestamp or time formatted string.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="s2">"2020-12-28"</span><span class="p">,</span> <span class="s2">"2021-12-31"</span>
+    <span class="n">dates</span><span class="p">:</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Index</span> <span class="o">=</span>  <span class="n">pandas</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"D"</span><span class="p">)</span>
+    <span class="sa">F</span><span class="s2">"our dates index has </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span><span class="si">}</span><span class="s2"> days"</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'our dates index has 369 days'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>it would really if our <code>calendar</code> demonstrated something practical which is why we'll import the third party <code>holidays</code> library; the calendars we draw will highlight holidays.</p>
+
+<pre><code>pip install holidays</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="kn">import</span> <span class="nn">holidays</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="sa">F</span><span class="s2">"""there are </span><span class="si">{</span><span class="nb">len</span><span class="p">([</span><span class="n">y</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="n">holidays</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">holidays</span><span class="o">.</span><span class="n">HolidayBase</span><span class="p">)])</span><span class="si">}</span><span class="s2"> different calendars included in `holidays`"""</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'there are 262 different calendars included in `holidays`'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>for demonstration we'll restrict our holidays to just the <code>us</code> for now.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">us</span><span class="p">:</span> <span class="n">holidays</span><span class="o">.</span><span class="n">HolidayBase</span> <span class="o">=</span> <span class="n">holidays</span><span class="o">.</span><span class="n">UnitedStates</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>to start with we'll provide the form of our indexes and columns of our <code>DataFrame</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">df</span><span class="p">:</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">dates</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">"date"</span><span class="p">),</span> <span class="s2">"year week month day dayofweek holiday"</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th>year</th>
+      <th>week</th>
+      <th>month</th>
+      <th>day</th>
+      <th>dayofweek</th>
+      <th>holiday</th>
+    </tr>
+<tr>
+<th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+</thead>
+<tbody></tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>we'll introduce the <code>pandas.DataFrame.assign</code> method that lets you assign new columns using keyword parameters. this is just a way another way of setting items using normal python syntax</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">dates</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th>year</th>
+      <th>week</th>
+      <th>month</th>
+      <th>day</th>
+      <th>dayofweek</th>
+      <th>holiday</th>
+    </tr>
+<tr>
+<th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th>2020-12-28</th>
+      <td>2020</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+<tr>
+<th>2020-12-29</th>
+      <td>2020</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+</tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>multiple columns can be assigned at once, and below we'll fill out the rest out dataset.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+        <span class="n">month</span><span class="o">=</span><span class="n">dates</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> 
+        <span class="n">dayofweek</span><span class="o">=</span><span class="n">dates</span><span class="o">.</span><span class="n">dayofweek</span><span class="p">,</span> 
+        <span class="n">day</span><span class="o">=</span><span class="n">dates</span><span class="o">.</span><span class="n">day</span><span class="p">,</span> 
+        <span class="n">holiday</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">us</span><span class="o">.</span><span class="fm">__contains__</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th>year</th>
+      <th>week</th>
+      <th>month</th>
+      <th>day</th>
+      <th>dayofweek</th>
+      <th>holiday</th>
+    </tr>
+<tr>
+<th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th>2020-12-28</th>
+      <td>2020</td>
+      <td>NaN</td>
+      <td>12</td>
+      <td>28</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+<tr>
+<th>2020-12-29</th>
+      <td>2020</td>
+      <td>NaN</td>
+      <td>12</td>
+      <td>29</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+</tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>pandas</code> api has changed and we need to use the new <a href="https://pandas.pydata.org/docs/reference/api/pandas.Timestamp.isocalendar.html"><code>pandas.Timestamp.isocalendar</code></a> to expand a datetime index into the ISO year, week number, and weekday. which is the new way to access the weekofyear; direct access to <code>dates.index.weekofyear</code> is being deprecated.</p>
+<p>to get the day of the week we prepare an the isocalendar and assign the week column.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">iso</span><span class="p">:</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">dates</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+        <span class="n">week</span><span class="o">=</span><span class="n">iso</span><span class="o">.</span><span class="n">week</span>
+    <span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th>year</th>
+      <th>week</th>
+      <th>month</th>
+      <th>day</th>
+      <th>dayofweek</th>
+      <th>holiday</th>
+    </tr>
+<tr>
+<th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th>2021-02-07</th>
+      <td>2021</td>
+      <td>5</td>
+      <td>2</td>
+      <td>7</td>
+      <td>6</td>
+      <td>False</td>
+    </tr>
+<tr>
+<th>2021-06-22</th>
+      <td>2021</td>
+      <td>25</td>
+      <td>6</td>
+      <td>22</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+</tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>for a <code>calendar</code> we'll want to group days into months. which we can acheive with a few steps in <code>pandas</code>.</p>
+<p>it is really hard to avoid importing <code>numpy</code>, and we will use the standard library <code>calendar</code> module zhoosh up our calendars.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="kn">import</span> <span class="nn">numpy</span><span class="o">,</span> <span class="nn">calendar</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>calendar</code> provides localized names for the days and months.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">month_names</span><span class="p">,</span> <span class="n">day_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">calendar</span><span class="o">.</span><span class="n">month_name</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">calendar</span><span class="o">.</span><span class="n">day_name</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>display the calendars</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>we're near the place where we can present our calendars. all we need to do is iterate through the months</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">"year"</span><span class="p">,</span> <span class="s2">"month"</span><span class="p">,</span> <span class="s2">"week"</span><span class="p">,</span> <span class="s2">"dayofweek"</span><span class="p">])</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>day</th>
+      <th>holiday</th>
+    </tr>
+<tr>
+<th>year</th>
+      <th>month</th>
+      <th>week</th>
+      <th>dayofweek</th>
+      <th></th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th rowspan="2" valign="top">2021</th>
+      <th>10</th>
+      <th>39</th>
+      <th>4</th>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+<tr>
+<th>9</th>
+      <th>37</th>
+      <th>0</th>
+      <td>13</td>
+      <td>False</td>
+    </tr>
+</tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>style_calendar</code> is meant to style a single month dataframe. we'll discuss the design choices following the code.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">background</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="kc">True</span><span class="p">:</span> <span class="s2">"""background-color: yellow; color: black;"""</span><span class="p">,</span>
+        <span class="kc">False</span><span class="p">:</span> <span class="s2">"""background-color: purple;"""</span><span class="p">,</span>
+        <span class="n">numpy</span><span class="o">.</span><span class="n">nan</span><span class="p">:</span> <span class="s2">"""font-size: 0px;"""</span>
+    <span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>for each day, we need to align it with a holiday. we're going to acheive this by unstacking the <code>dayofweek</code> which moves the row index to columns, and creates a multiindex. this index of <code>months</code> and <code>days</code> same so that access to their values are natural later on.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">months</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="s2">"dayofweek"</span><span class="p">)</span>
+    <span class="n">days</span> <span class="o">=</span> <span class="n">months</span><span class="p">[</span><span class="s2">"day"</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>what follows is kind of a holiday calendar using the pandas style attribute.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="k">def</span> <span class="nf">bg_color</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">months</span><span class="p">[</span><span class="s2">"holiday"</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">background</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">days</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">months</span><span class="p">[</span><span class="s2">"holiday"</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">background</span><span class="o">.</span><span class="n">get</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<style type="text/css">
+#T_aac3e_row0_col0, #T_aac3e_row0_col1, #T_aac3e_row0_col2, #T_aac3e_row0_col3, #T_aac3e_row0_col4, #T_aac3e_row0_col5, #T_aac3e_row0_col6, #T_aac3e_row1_col0, #T_aac3e_row1_col1, #T_aac3e_row1_col2, #T_aac3e_row1_col3, #T_aac3e_row1_col4, #T_aac3e_row1_col5, #T_aac3e_row1_col6, #T_aac3e_row2_col0, #T_aac3e_row2_col1, #T_aac3e_row2_col2, #T_aac3e_row2_col3, #T_aac3e_row2_col4, #T_aac3e_row2_col5, #T_aac3e_row2_col6 {
+  background-color: purple;
+}
+</style>
+<table id="T_aac3e_">
+<thead>
+<tr>
+<th class="blank"> </th>
+      <th class="blank"> </th>
+      <th class="index_name level0">dayofweek</th>
+      <th class="col_heading level0 col0">0</th>
+      <th class="col_heading level0 col1">1</th>
+      <th class="col_heading level0 col2">2</th>
+      <th class="col_heading level0 col3">3</th>
+      <th class="col_heading level0 col4">4</th>
+      <th class="col_heading level0 col5">5</th>
+      <th class="col_heading level0 col6">6</th>
+    </tr>
+<tr>
+<th class="index_name level0">year</th>
+      <th class="index_name level1">month</th>
+      <th class="index_name level2">week</th>
+      <th class="blank col0"> </th>
+      <th class="blank col1"> </th>
+      <th class="blank col2"> </th>
+      <th class="blank col3"> </th>
+      <th class="blank col4"> </th>
+      <th class="blank col5"> </th>
+      <th class="blank col6"> </th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th id="T_aac3e_level0_row0" class="row_heading level0 row0" rowspan="3">2021</th>
+      <th id="T_aac3e_level1_row0" class="row_heading level1 row0">12</th>
+      <th id="T_aac3e_level2_row0" class="row_heading level2 row0">49</th>
+      <td id="T_aac3e_row0_col0" class="data row0 col0">6</td>
+      <td id="T_aac3e_row0_col1" class="data row0 col1">7</td>
+      <td id="T_aac3e_row0_col2" class="data row0 col2">8</td>
+      <td id="T_aac3e_row0_col3" class="data row0 col3">9</td>
+      <td id="T_aac3e_row0_col4" class="data row0 col4">10</td>
+      <td id="T_aac3e_row0_col5" class="data row0 col5">11</td>
+      <td id="T_aac3e_row0_col6" class="data row0 col6">12</td>
+    </tr>
+<tr>
+<th id="T_aac3e_level1_row1" class="row_heading level1 row1">2</th>
+      <th id="T_aac3e_level2_row1" class="row_heading level2 row1">6</th>
+      <td id="T_aac3e_row1_col0" class="data row1 col0">8</td>
+      <td id="T_aac3e_row1_col1" class="data row1 col1">9</td>
+      <td id="T_aac3e_row1_col2" class="data row1 col2">10</td>
+      <td id="T_aac3e_row1_col3" class="data row1 col3">11</td>
+      <td id="T_aac3e_row1_col4" class="data row1 col4">12</td>
+      <td id="T_aac3e_row1_col5" class="data row1 col5">13</td>
+      <td id="T_aac3e_row1_col6" class="data row1 col6">14</td>
+    </tr>
+<tr>
+<th id="T_aac3e_level1_row2" class="row_heading level1 row2">5</th>
+      <th id="T_aac3e_level2_row2" class="row_heading level2 row2">18</th>
+      <td id="T_aac3e_row2_col0" class="data row2 col0">3</td>
+      <td id="T_aac3e_row2_col1" class="data row2 col1">4</td>
+      <td id="T_aac3e_row2_col2" class="data row2 col2">5</td>
+      <td id="T_aac3e_row2_col3" class="data row2 col3">6</td>
+      <td id="T_aac3e_row2_col4" class="data row2 col4">7</td>
+      <td id="T_aac3e_row2_col5" class="data row2 col5">8</td>
+      <td id="T_aac3e_row2_col6" class="data row2 col6">9</td>
+    </tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>personally, i'd like a little more control over the composition of our calendars. we'll do this by mixing the <code>IPython</code> display objects and pandas.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>style each month using the <code>pandas.DataFrame.style</code> attribute</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">monthly</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">hide_index</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">bg_color</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">days</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"year"</span><span class="p">,</span> <span class="s2">"month"</span><span class="p">])</span>
+    <span class="p">)</span>
+    <span class="n">monthly</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{(2020, 12): &lt;pandas.io.formats.style.Styler at 0x7f0b3b46b1c0&gt;,
+ (2021, 1): &lt;pandas.io.formats.style.Styler at 0x7f0b3b46b370&gt;,
+ (2021, 2): &lt;pandas.io.formats.style.Styler at 0x7f0b3b46b4f0&gt;,
+ (2021, 3): &lt;pandas.io.formats.style.Styler at 0x7f0b3b46b670&gt;,
+ (2021, 4): &lt;pandas.io.formats.style.Styler at 0x7f0b3b46b9a0&gt;,
+ (2021, 5): &lt;pandas.io.formats.style.Styler at 0x7f0b3b46bb80&gt;,
+ (2021, 6): &lt;pandas.io.formats.style.Styler at 0x7f0b3b46bd60&gt;,
+ (2021, 7): &lt;pandas.io.formats.style.Styler at 0x7f0b3b46bf40&gt;,
+ (2021, 8): &lt;pandas.io.formats.style.Styler at 0x7f0b3b3b7160&gt;,
+ (2021, 9): &lt;pandas.io.formats.style.Styler at 0x7f0b3b454f10&gt;,
+ (2021, 10): &lt;pandas.io.formats.style.Styler at 0x7f0b3b454e50&gt;,
+ (2021, 11): &lt;pandas.io.formats.style.Styler at 0x7f0b3b454970&gt;,
+ (2021, 12): &lt;pandas.io.formats.style.Styler at 0x7f0b3b454d00&gt;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>construct raw html beginning with the <code>monthly</code> styled dataframes, and combine them into a parent container with the selector <code>div.calendars</code>. we put a heading for each month.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">HTML</span><span class="p">(</span><span class="s2">"""&lt;div class="calendars"&gt;</span><span class="si">%s</span><span class="s2">&lt;/div&gt;"""</span> <span class="o">%</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+        <span class="sd">"""&lt;div class="month"&gt;&lt;h2&gt;%s %i&lt;/h2&gt;%s&lt;/div&gt;"""</span><span class="o">%</span><span class="p">(</span>
+            <span class="n">month_names</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">monthly</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">render</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">monthly</span>
+    <span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div class="calendars">
+<div class="month">
+<h3>December 2020</h3>
+<style type="text/css">
+#T_845e6_row0_col0, #T_845e6_row0_col1, #T_845e6_row0_col2, #T_845e6_row0_col3 {
+  background-color: purple;
+}
+#T_845e6_row0_col4, #T_845e6_row0_col5, #T_845e6_row0_col6 {
+  font-size: 0px;
+}
+</style>
+<table id="T_845e6_">
+<thead><tr>
+<th class="col_heading level0 col0">0</th>
+      <th class="col_heading level0 col1">1</th>
+      <th class="col_heading level0 col2">2</th>
+      <th class="col_heading level0 col3">3</th>
+      <th class="col_heading level0 col4">4</th>
+      <th class="col_heading level0 col5">5</th>
+      <th class="col_heading level0 col6">6</th>
+    </tr></thead>
+<tbody><tr>
+<td id="T_845e6_row0_col0" class="data row0 col0">28</td>
+      <td id="T_845e6_row0_col1" class="data row0 col1">29</td>
+      <td id="T_845e6_row0_col2" class="data row0 col2">30</td>
+      <td id="T_845e6_row0_col3" class="data row0 col3">31</td>
+      <td id="T_845e6_row0_col4" class="data row0 col4">0</td>
+      <td id="T_845e6_row0_col5" class="data row0 col5">0</td>
+      <td id="T_845e6_row0_col6" class="data row0 col6">0</td>
+    </tr></tbody>
+</table>
+</div>
+<div class="month">
+<h3>January 2021</h3>
+<style type="text/css">
+#T_343f9_row0_col0, #T_343f9_row0_col1, #T_343f9_row0_col2, #T_343f9_row0_col3, #T_343f9_row0_col4, #T_343f9_row0_col5, #T_343f9_row0_col6, #T_343f9_row1_col0, #T_343f9_row1_col1, #T_343f9_row1_col2, #T_343f9_row1_col3, #T_343f9_row1_col4, #T_343f9_row1_col5, #T_343f9_row1_col6, #T_343f9_row2_col1, #T_343f9_row2_col2, #T_343f9_row2_col3, #T_343f9_row2_col4, #T_343f9_row2_col5, #T_343f9_row2_col6, #T_343f9_row3_col0, #T_343f9_row3_col1, #T_343f9_row3_col2, #T_343f9_row3_col3, #T_343f9_row3_col4, #T_343f9_row3_col5, #T_343f9_row3_col6, #T_343f9_row4_col5, #T_343f9_row4_col6 {
+  background-color: purple;
+}
+#T_343f9_row2_col0, #T_343f9_row4_col4 {
+  background-color: yellow;
+  color: black;
+}
+#T_343f9_row4_col0, #T_343f9_row4_col1, #T_343f9_row4_col2, #T_343f9_row4_col3 {
+  font-size: 0px;
+}
+</style>
+<table id="T_343f9_">
+<thead><tr>
+<th class="col_heading level0 col0">0</th>
+      <th class="col_heading level0 col1">1</th>
+      <th class="col_heading level0 col2">2</th>
+      <th class="col_heading level0 col3">3</th>
+      <th class="col_heading level0 col4">4</th>
+      <th class="col_heading level0 col5">5</th>
+      <th class="col_heading level0 col6">6</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td id="T_343f9_row0_col0" class="data row0 col0">4</td>
+      <td id="T_343f9_row0_col1" class="data row0 col1">5</td>
+      <td id="T_343f9_row0_col2" class="data row0 col2">6</td>
+      <td id="T_343f9_row0_col3" class="data row0 col3">7</td>
+      <td id="T_343f9_row0_col4" class="data row0 col4">8</td>
+      <td id="T_343f9_row0_col5" class="data row0 col5">9</td>
+      <td id="T_343f9_row0_col6" class="data row0 col6">10</td>
+    </tr>
+<tr>
+<td id="T_343f9_row1_col0" class="data row1 col0">11</td>
+      <td id="T_343f9_row1_col1" class="data row1 col1">12</td>
+      <td id="T_343f9_row1_col2" class="data row1 col2">13</td>
+      <td id="T_343f9_row1_col3" class="data row1 col3">14</td>
+      <td id="T_343f9_row1_col4" class="data row1 col4">15</td>
+      <td id="T_343f9_row1_col5" class="data row1 col5">16</td>
+      <td id="T_343f9_row1_col6" class="data row1 col6">17</td>
+    </tr>
+<tr>
+<td id="T_343f9_row2_col0" class="data row2 col0">18</td>
+      <td id="T_343f9_row2_col1" class="data row2 col1">19</td>
+      <td id="T_343f9_row2_col2" class="data row2 col2">20</td>
+      <td id="T_343f9_row2_col3" class="data row2 col3">21</td>
+      <td id="T_343f9_row2_col4" class="data row2 col4">22</td>
+      <td id="T_343f9_row2_col5" class="data row2 col5">23</td>
+      <td id="T_343f9_row2_col6" class="data row2 col6">24</td>
+    </tr>
+<tr>
+<td id="T_343f9_row3_col0" class="data row3 col0">25</td>
+      <td id="T_343f9_row3_col1" class="data row3 col1">26</td>
+      <td id="T_343f9_row3_col2" class="data row3 col2">27</td>
+      <td id="T_343f9_row3_col3" class="data row3 col3">28</td>
+      <td id="T_343f9_row3_col4" class="data row3 col4">29</td>
+      <td id="T_343f9_row3_col5" class="data row3 col5">30</td>
+      <td id="T_343f9_row3_col6" class="data row3 col6">31</td>
+    </tr>
+<tr>
+<td id="T_343f9_row4_col0" class="data row4 col0">0</td>
+      <td id="T_343f9_row4_col1" class="data row4 col1">0</td>
+      <td id="T_343f9_row4_col2" class="data row4 col2">0</td>
+      <td id="T_343f9_row4_col3" class="data row4 col3">0</td>
+      <td id="T_343f9_row4_col4" class="data row4 col4">1</td>
+      <td id="T_343f9_row4_col5" class="data row4 col5">2</td>
+      <td id="T_343f9_row4_col6" class="data row4 col6">3</td>
+    </tr>
+</tbody>
+</table>
+</div>
+<div class="month">
+<h3>February 2021</h3>
+<style type="text/css">
+#T_feb45_row0_col0, #T_feb45_row0_col1, #T_feb45_row0_col2, #T_feb45_row0_col3, #T_feb45_row0_col4, #T_feb45_row0_col5, #T_feb45_row0_col6, #T_feb45_row1_col0, #T_feb45_row1_col1, #T_feb45_row1_col2, #T_feb45_row1_col3, #T_feb45_row1_col4, #T_feb45_row1_col5, #T_feb45_row1_col6, #T_feb45_row2_col1, #T_feb45_row2_col2, #T_feb45_row2_col3, #T_feb45_row2_col4, #T_feb45_row2_col5, #T_feb45_row2_col6, #T_feb45_row3_col0, #T_feb45_row3_col1, #T_feb45_row3_col2, #T_feb45_row3_col3, #T_feb45_row3_col4, #T_feb45_row3_col5, #T_feb45_row3_col6 {
+  background-color: purple;
+}
+#T_feb45_row2_col0 {
+  background-color: yellow;
+  color: black;
+}
+</style>
+<table id="T_feb45_">
+<thead><tr>
+<th class="col_heading level0 col0">0</th>
+      <th class="col_heading level0 col1">1</th>
+      <th class="col_heading level0 col2">2</th>
+      <th class="col_heading level0 col3">3</th>
+      <th class="col_heading level0 col4">4</th>
+      <th class="col_heading level0 col5">5</th>
+      <th class="col_heading level0 col6">6</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td id="T_feb45_row0_col0" class="data row0 col0">1</td>
+      <td id="T_feb45_row0_col1" class="data row0 col1">2</td>
+      <td id="T_feb45_row0_col2" class="data row0 col2">3</td>
+      <td id="T_feb45_row0_col3" class="data row0 col3">4</td>
+      <td id="T_feb45_row0_col4" class="data row0 col4">5</td>
+      <td id="T_feb45_row0_col5" class="data row0 col5">6</td>
+      <td id="T_feb45_row0_col6" class="data row0 col6">7</td>
+    </tr>
+<tr>
+<td id="T_feb45_row1_col0" class="data row1 col0">8</td>
+      <td id="T_feb45_row1_col1" class="data row1 col1">9</td>
+      <td id="T_feb45_row1_col2" class="data row1 col2">10</td>
+      <td id="T_feb45_row1_col3" class="data row1 col3">11</td>
+      <td id="T_feb45_row1_col4" class="data row1 col4">12</td>
+      <td id="T_feb45_row1_col5" class="data row1 col5">13</td>
+      <td id="T_feb45_row1_col6" class="data row1 col6">14</td>
+    </tr>
+<tr>
+<td id="T_feb45_row2_col0" class="data row2 col0">15</td>
+      <td id="T_feb45_row2_col1" class="data row2 col1">16</td>
+      <td id="T_feb45_row2_col2" class="data row2 col2">17</td>
+      <td id="T_feb45_row2_col3" class="data row2 col3">18</td>
+      <td id="T_feb45_row2_col4" class="data row2 col4">19</td>
+      <td id="T_feb45_row2_col5" class="data row2 col5">20</td>
+      <td id="T_feb45_row2_col6" class="data row2 col6">21</td>
+    </tr>
+<tr>
+<td id="T_feb45_row3_col0" class="data row3 col0">22</td>
+      <td id="T_feb45_row3_col1" class="data row3 col1">23</td>
+      <td id="T_feb45_row3_col2" class="data row3 col2">24</td>
+      <td id="T_feb45_row3_col3" class="data row3 col3">25</td>
+      <td id="T_feb45_row3_col4" class="data row3 col4">26</td>
+      <td id="T_feb45_row3_col5" class="data row3 col5">27</td>
+      <td id="T_feb45_row3_col6" class="data row3 col6">28</td>
+    </tr>
+</tbody>
+</table>
+</div>
+<div class="month">
+<h3>March 2021</h3>
+<style type="text/css">
+#T_b199b_row0_col0, #T_b199b_row0_col1, #T_b199b_row0_col2, #T_b199b_row0_col3, #T_b199b_row0_col4, #T_b199b_row0_col5, #T_b199b_row0_col6, #T_b199b_row1_col0, #T_b199b_row1_col1, #T_b199b_row1_col2, #T_b199b_row1_col3, #T_b199b_row1_col4, #T_b199b_row1_col5, #T_b199b_row1_col6, #T_b199b_row2_col0, #T_b199b_row2_col1, #T_b199b_row2_col2, #T_b199b_row2_col3, #T_b199b_row2_col4, #T_b199b_row2_col5, #T_b199b_row2_col6, #T_b199b_row3_col0, #T_b199b_row3_col1, #T_b199b_row3_col2, #T_b199b_row3_col3, #T_b199b_row3_col4, #T_b199b_row3_col5, #T_b199b_row3_col6, #T_b199b_row4_col0, #T_b199b_row4_col1, #T_b199b_row4_col2 {
+  background-color: purple;
+}
+#T_b199b_row4_col3, #T_b199b_row4_col4, #T_b199b_row4_col5, #T_b199b_row4_col6 {
+  font-size: 0px;
+}
+</style>
+<table id="T_b199b_">
+<thead><tr>
+<th class="col_heading level0 col0">0</th>
+      <th class="col_heading level0 col1">1</th>
+      <th class="col_heading level0 col2">2</th>
+      <th class="col_heading level0 col3">3</th>
+      <th class="col_heading level0 col4">4</th>
+      <th class="col_heading level0 col5">5</th>
+      <th class="col_heading level0 col6">6</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td id="T_b199b_row0_col0" class="data row0 col0">1</td>
+      <td id="T_b199b_row0_col1" class="data row0 col1">2</td>
+      <td id="T_b199b_row0_col2" class="data row0 col2">3</td>
+      <td id="T_b199b_row0_col3" class="data row0 col3">4</td>
+      <td id="T_b199b_row0_col4" class="data row0 col4">5</td>
+      <td id="T_b199b_row0_col5" class="data row0 col5">6</td>
+      <td id="T_b199b_row0_col6" class="data row0 col6">7</td>
+    </tr>
+<tr>
+<td id="T_b199b_row1_col0" class="data row1 col0">8</td>
+      <td id="T_b199b_row1_col1" class="data row1 col1">9</td>
+      <td id="T_b199b_row1_col2" class="data row1 col2">10</td>
+      <td id="T_b199b_row1_col3" class="data row1 col3">11</td>
+      <td id="T_b199b_row1_col4" class="data row1 col4">12</td>
+      <td id="T_b199b_row1_col5" class="data row1 col5">13</td>
+      <td id="T_b199b_row1_col6" class="data row1 col6">14</td>
+    </tr>
+<tr>
+<td id="T_b199b_row2_col0" class="data row2 col0">15</td>
+      <td id="T_b199b_row2_col1" class="data row2 col1">16</td>
+      <td id="T_b199b_row2_col2" class="data row2 col2">17</td>
+      <td id="T_b199b_row2_col3" class="data row2 col3">18</td>
+      <td id="T_b199b_row2_col4" class="data row2 col4">19</td>
+      <td id="T_b199b_row2_col5" class="data row2 col5">20</td>
+      <td id="T_b199b_row2_col6" class="data row2 col6">21</td>
+    </tr>
+<tr>
+<td id="T_b199b_row3_col0" class="data row3 col0">22</td>
+      <td id="T_b199b_row3_col1" class="data row3 col1">23</td>
+      <td id="T_b199b_row3_col2" class="data row3 col2">24</td>
+      <td id="T_b199b_row3_col3" class="data row3 col3">25</td>
+      <td id="T_b199b_row3_col4" class="data row3 col4">26</td>
+      <td id="T_b199b_row3_col5" class="data row3 col5">27</td>
+      <td id="T_b199b_row3_col6" class="data row3 col6">28</td>
+    </tr>
+<tr>
+<td id="T_b199b_row4_col0" class="data row4 col0">29</td>
+      <td id="T_b199b_row4_col1" class="data row4 col1">30</td>
+      <td id="T_b199b_row4_col2" class="data row4 col2">31</td>
+      <td id="T_b199b_row4_col3" class="data row4 col3">0</td>
+      <td id="T_b199b_row4_col4" class="data row4 col4">0</td>
+      <td id="T_b199b_row4_col5" class="data row4 col5">0</td>
+      <td id="T_b199b_row4_col6" class="data row4 col6">0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+<div class="month">
+<h3>April 2021</h3>
+<style type="text/css">
+#T_c673d_row0_col0, #T_c673d_row0_col1, #T_c673d_row0_col2, #T_c673d_row4_col5, #T_c673d_row4_col6 {
+  font-size: 0px;
+}
+#T_c673d_row0_col3, #T_c673d_row0_col4, #T_c673d_row0_col5, #T_c673d_row0_col6, #T_c673d_row1_col0, #T_c673d_row1_col1, #T_c673d_row1_col2, #T_c673d_row1_col3, #T_c673d_row1_col4, #T_c673d_row1_col5, #T_c673d_row1_col6, #T_c673d_row2_col0, #T_c673d_row2_col1, #T_c673d_row2_col2, #T_c673d_row2_col3, #T_c673d_row2_col4, #T_c673d_row2_col5, #T_c673d_row2_col6, #T_c673d_row3_col0, #T_c673d_row3_col1, #T_c673d_row3_col2, #T_c673d_row3_col3, #T_c673d_row3_col4, #T_c673d_row3_col5, #T_c673d_row3_col6, #T_c673d_row4_col0, #T_c673d_row4_col1, #T_c673d_row4_col2, #T_c673d_row4_col3, #T_c673d_row4_col4 {
+  background-color: purple;
+}
+</style>
+<table id="T_c673d_">
+<thead><tr>
+<th class="col_heading level0 col0">0</th>
+      <th class="col_heading level0 col1">1</th>
+      <th class="col_heading level0 col2">2</th>
+      <th class="col_heading level0 col3">3</th>
+      <th class="col_heading level0 col4">4</th>
+      <th class="col_heading level0 col5">5</th>
+      <th class="col_heading level0 col6">6</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td id="T_c673d_row0_col0" class="data row0 col0">0</td>
+      <td id="T_c673d_row0_col1" class="data row0 col1">0</td>
+      <td id="T_c673d_row0_col2" class="data row0 col2">0</td>
+      <td id="T_c673d_row0_col3" class="data row0 col3">1</td>
+      <td id="T_c673d_row0_col4" class="data row0 col4">2</td>
+      <td id="T_c673d_row0_col5" class="data row0 col5">3</td>
+      <td id="T_c673d_row0_col6" class="data row0 col6">4</td>
+    </tr>
+<tr>
+<td id="T_c673d_row1_col0" class="data row1 col0">5</td>
+      <td id="T_c673d_row1_col1" class="data row1 col1">6</td>
+      <td id="T_c673d_row1_col2" class="data row1 col2">7</td>
+      <td id="T_c673d_row1_col3" class="data row1 col3">8</td>
+      <td id="T_c673d_row1_col4" class="data row1 col4">9</td>
+      <td id="T_c673d_row1_col5" class="data row1 col5">10</td>
+      <td id="T_c673d_row1_col6" class="data row1 col6">11</td>
+    </tr>
+<tr>
+<td id="T_c673d_row2_col0" class="data row2 col0">12</td>
+      <td id="T_c673d_row2_col1" class="data row2 col1">13</td>
+      <td id="T_c673d_row2_col2" class="data row2 col2">14</td>
+      <td id="T_c673d_row2_col3" class="data row2 col3">15</td>
+      <td id="T_c673d_row2_col4" class="data row2 col4">16</td>
+      <td id="T_c673d_row2_col5" class="data row2 col5">17</td>
+      <td id="T_c673d_row2_col6" class="data row2 col6">18</td>
+    </tr>
+<tr>
+<td id="T_c673d_row3_col0" class="data row3 col0">19</td>
+      <td id="T_c673d_row3_col1" class="data row3 col1">20</td>
+      <td id="T_c673d_row3_col2" class="data row3 col2">21</td>
+      <td id="T_c673d_row3_col3" class="data row3 col3">22</td>
+      <td id="T_c673d_row3_col4" class="data row3 col4">23</td>
+      <td id="T_c673d_row3_col5" class="data row3 col5">24</td>
+      <td id="T_c673d_row3_col6" class="data row3 col6">25</td>
+    </tr>
+<tr>
+<td id="T_c673d_row4_col0" class="data row4 col0">26</td>
+      <td id="T_c673d_row4_col1" class="data row4 col1">27</td>
+      <td id="T_c673d_row4_col2" class="data row4 col2">28</td>
+      <td id="T_c673d_row4_col3" class="data row4 col3">29</td>
+      <td id="T_c673d_row4_col4" class="data row4 col4">30</td>
+      <td id="T_c673d_row4_col5" class="data row4 col5">0</td>
+      <td id="T_c673d_row4_col6" class="data row4 col6">0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+<div class="month">
+<h3>May 2021</h3>
+<style type="text/css">
+#T_ebbe5_row0_col0, #T_ebbe5_row0_col1, #T_ebbe5_row0_col2, #T_ebbe5_row0_col3, #T_ebbe5_row0_col4, #T_ebbe5_row5_col1, #T_ebbe5_row5_col2, #T_ebbe5_row5_col3, #T_ebbe5_row5_col4, #T_ebbe5_row5_col5, #T_ebbe5_row5_col6 {
+  font-size: 0px;
+}
+#T_ebbe5_row0_col5, #T_ebbe5_row0_col6, #T_ebbe5_row1_col0, #T_ebbe5_row1_col1, #T_ebbe5_row1_col2, #T_ebbe5_row1_col3, #T_ebbe5_row1_col4, #T_ebbe5_row1_col5, #T_ebbe5_row1_col6, #T_ebbe5_row2_col0, #T_ebbe5_row2_col1, #T_ebbe5_row2_col2, #T_ebbe5_row2_col3, #T_ebbe5_row2_col4, #T_ebbe5_row2_col5, #T_ebbe5_row2_col6, #T_ebbe5_row3_col0, #T_ebbe5_row3_col1, #T_ebbe5_row3_col2, #T_ebbe5_row3_col3, #T_ebbe5_row3_col4, #T_ebbe5_row3_col5, #T_ebbe5_row3_col6, #T_ebbe5_row4_col0, #T_ebbe5_row4_col1, #T_ebbe5_row4_col2, #T_ebbe5_row4_col3, #T_ebbe5_row4_col4, #T_ebbe5_row4_col5, #T_ebbe5_row4_col6 {
+  background-color: purple;
+}
+#T_ebbe5_row5_col0 {
+  background-color: yellow;
+  color: black;
+}
+</style>
+<table id="T_ebbe5_">
+<thead><tr>
+<th class="col_heading level0 col0">0</th>
+      <th class="col_heading level0 col1">1</th>
+      <th class="col_heading level0 col2">2</th>
+      <th class="col_heading level0 col3">3</th>
+      <th class="col_heading level0 col4">4</th>
+      <th class="col_heading level0 col5">5</th>
+      <th class="col_heading level0 col6">6</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td id="T_ebbe5_row0_col0" class="data row0 col0">0</td>
+      <td id="T_ebbe5_row0_col1" class="data row0 col1">0</td>
+      <td id="T_ebbe5_row0_col2" class="data row0 col2">0</td>
+      <td id="T_ebbe5_row0_col3" class="data row0 col3">0</td>
+      <td id="T_ebbe5_row0_col4" class="data row0 col4">0</td>
+      <td id="T_ebbe5_row0_col5" class="data row0 col5">1</td>
+      <td id="T_ebbe5_row0_col6" class="data row0 col6">2</td>
+    </tr>
+<tr>
+<td id="T_ebbe5_row1_col0" class="data row1 col0">3</td>
+      <td id="T_ebbe5_row1_col1" class="data row1 col1">4</td>
+      <td id="T_ebbe5_row1_col2" class="data row1 col2">5</td>
+      <td id="T_ebbe5_row1_col3" class="data row1 col3">6</td>
+      <td id="T_ebbe5_row1_col4" class="data row1 col4">7</td>
+      <td id="T_ebbe5_row1_col5" class="data row1 col5">8</td>
+      <td id="T_ebbe5_row1_col6" class="data row1 col6">9</td>
+    </tr>
+<tr>
+<td id="T_ebbe5_row2_col0" class="data row2 col0">10</td>
+      <td id="T_ebbe5_row2_col1" class="data row2 col1">11</td>
+      <td id="T_ebbe5_row2_col2" class="data row2 col2">12</td>
+      <td id="T_ebbe5_row2_col3" class="data row2 col3">13</td>
+      <td id="T_ebbe5_row2_col4" class="data row2 col4">14</td>
+      <td id="T_ebbe5_row2_col5" class="data row2 col5">15</td>
+      <td id="T_ebbe5_row2_col6" class="data row2 col6">16</td>
+    </tr>
+<tr>
+<td id="T_ebbe5_row3_col0" class="data row3 col0">17</td>
+      <td id="T_ebbe5_row3_col1" class="data row3 col1">18</td>
+      <td id="T_ebbe5_row3_col2" class="data row3 col2">19</td>
+      <td id="T_ebbe5_row3_col3" class="data row3 col3">20</td>
+      <td id="T_ebbe5_row3_col4" class="data row3 col4">21</td>
+      <td id="T_ebbe5_row3_col5" class="data row3 col5">22</td>
+      <td id="T_ebbe5_row3_col6" class="data row3 col6">23</td>
+    </tr>
+<tr>
+<td id="T_ebbe5_row4_col0" class="data row4 col0">24</td>
+      <td id="T_ebbe5_row4_col1" class="data row4 col1">25</td>
+      <td id="T_ebbe5_row4_col2" class="data row4 col2">26</td>
+      <td id="T_ebbe5_row4_col3" class="data row4 col3">27</td>
+      <td id="T_ebbe5_row4_col4" class="data row4 col4">28</td>
+      <td id="T_ebbe5_row4_col5" class="data row4 col5">29</td>
+      <td id="T_ebbe5_row4_col6" class="data row4 col6">30</td>
+    </tr>
+<tr>
+<td id="T_ebbe5_row5_col0" class="data row5 col0">31</td>
+      <td id="T_ebbe5_row5_col1" class="data row5 col1">0</td>
+      <td id="T_ebbe5_row5_col2" class="data row5 col2">0</td>
+      <td id="T_ebbe5_row5_col3" class="data row5 col3">0</td>
+      <td id="T_ebbe5_row5_col4" class="data row5 col4">0</td>
+      <td id="T_ebbe5_row5_col5" class="data row5 col5">0</td>
+      <td id="T_ebbe5_row5_col6" class="data row5 col6">0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+<div class="month">
+<h3>June 2021</h3>
+<style type="text/css">
+#T_740c6_row0_col0, #T_740c6_row4_col3, #T_740c6_row4_col4, #T_740c6_row4_col5, #T_740c6_row4_col6 {
+  font-size: 0px;
+}
+#T_740c6_row0_col1, #T_740c6_row0_col2, #T_740c6_row0_col3, #T_740c6_row0_col4, #T_740c6_row0_col5, #T_740c6_row0_col6, #T_740c6_row1_col0, #T_740c6_row1_col1, #T_740c6_row1_col2, #T_740c6_row1_col3, #T_740c6_row1_col4, #T_740c6_row1_col5, #T_740c6_row1_col6, #T_740c6_row2_col0, #T_740c6_row2_col1, #T_740c6_row2_col2, #T_740c6_row2_col3, #T_740c6_row2_col4, #T_740c6_row2_col6, #T_740c6_row3_col0, #T_740c6_row3_col1, #T_740c6_row3_col2, #T_740c6_row3_col3, #T_740c6_row3_col4, #T_740c6_row3_col5, #T_740c6_row3_col6, #T_740c6_row4_col0, #T_740c6_row4_col1, #T_740c6_row4_col2 {
+  background-color: purple;
+}
+#T_740c6_row2_col5 {
+  background-color: yellow;
+  color: black;
+}
+</style>
+<table id="T_740c6_">
+<thead><tr>
+<th class="col_heading level0 col0">0</th>
+      <th class="col_heading level0 col1">1</th>
+      <th class="col_heading level0 col2">2</th>
+      <th class="col_heading level0 col3">3</th>
+      <th class="col_heading level0 col4">4</th>
+      <th class="col_heading level0 col5">5</th>
+      <th class="col_heading level0 col6">6</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td id="T_740c6_row0_col0" class="data row0 col0">0</td>
+      <td id="T_740c6_row0_col1" class="data row0 col1">1</td>
+      <td id="T_740c6_row0_col2" class="data row0 col2">2</td>
+      <td id="T_740c6_row0_col3" class="data row0 col3">3</td>
+      <td id="T_740c6_row0_col4" class="data row0 col4">4</td>
+      <td id="T_740c6_row0_col5" class="data row0 col5">5</td>
+      <td id="T_740c6_row0_col6" class="data row0 col6">6</td>
+    </tr>
+<tr>
+<td id="T_740c6_row1_col0" class="data row1 col0">7</td>
+      <td id="T_740c6_row1_col1" class="data row1 col1">8</td>
+      <td id="T_740c6_row1_col2" class="data row1 col2">9</td>
+      <td id="T_740c6_row1_col3" class="data row1 col3">10</td>
+      <td id="T_740c6_row1_col4" class="data row1 col4">11</td>
+      <td id="T_740c6_row1_col5" class="data row1 col5">12</td>
+      <td id="T_740c6_row1_col6" class="data row1 col6">13</td>
+    </tr>
+<tr>
+<td id="T_740c6_row2_col0" class="data row2 col0">14</td>
+      <td id="T_740c6_row2_col1" class="data row2 col1">15</td>
+      <td id="T_740c6_row2_col2" class="data row2 col2">16</td>
+      <td id="T_740c6_row2_col3" class="data row2 col3">17</td>
+      <td id="T_740c6_row2_col4" class="data row2 col4">18</td>
+      <td id="T_740c6_row2_col5" class="data row2 col5">19</td>
+      <td id="T_740c6_row2_col6" class="data row2 col6">20</td>
+    </tr>
+<tr>
+<td id="T_740c6_row3_col0" class="data row3 col0">21</td>
+      <td id="T_740c6_row3_col1" class="data row3 col1">22</td>
+      <td id="T_740c6_row3_col2" class="data row3 col2">23</td>
+      <td id="T_740c6_row3_col3" class="data row3 col3">24</td>
+      <td id="T_740c6_row3_col4" class="data row3 col4">25</td>
+      <td id="T_740c6_row3_col5" class="data row3 col5">26</td>
+      <td id="T_740c6_row3_col6" class="data row3 col6">27</td>
+    </tr>
+<tr>
+<td id="T_740c6_row4_col0" class="data row4 col0">28</td>
+      <td id="T_740c6_row4_col1" class="data row4 col1">29</td>
+      <td id="T_740c6_row4_col2" class="data row4 col2">30</td>
+      <td id="T_740c6_row4_col3" class="data row4 col3">0</td>
+      <td id="T_740c6_row4_col4" class="data row4 col4">0</td>
+      <td id="T_740c6_row4_col5" class="data row4 col5">0</td>
+      <td id="T_740c6_row4_col6" class="data row4 col6">0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+<div class="month">
+<h3>July 2021</h3>
+<style type="text/css">
+#T_e6695_row0_col0, #T_e6695_row0_col1, #T_e6695_row0_col2, #T_e6695_row4_col6 {
+  font-size: 0px;
+}
+#T_e6695_row0_col3, #T_e6695_row0_col4, #T_e6695_row0_col5, #T_e6695_row1_col1, #T_e6695_row1_col2, #T_e6695_row1_col3, #T_e6695_row1_col4, #T_e6695_row1_col5, #T_e6695_row1_col6, #T_e6695_row2_col0, #T_e6695_row2_col1, #T_e6695_row2_col2, #T_e6695_row2_col3, #T_e6695_row2_col4, #T_e6695_row2_col5, #T_e6695_row2_col6, #T_e6695_row3_col0, #T_e6695_row3_col1, #T_e6695_row3_col2, #T_e6695_row3_col3, #T_e6695_row3_col4, #T_e6695_row3_col5, #T_e6695_row3_col6, #T_e6695_row4_col0, #T_e6695_row4_col1, #T_e6695_row4_col2, #T_e6695_row4_col3, #T_e6695_row4_col4, #T_e6695_row4_col5 {
+  background-color: purple;
+}
+#T_e6695_row0_col6, #T_e6695_row1_col0 {
+  background-color: yellow;
+  color: black;
+}
+</style>
+<table id="T_e6695_">
+<thead><tr>
+<th class="col_heading level0 col0">0</th>
+      <th class="col_heading level0 col1">1</th>
+      <th class="col_heading level0 col2">2</th>
+      <th class="col_heading level0 col3">3</th>
+      <th class="col_heading level0 col4">4</th>
+      <th class="col_heading level0 col5">5</th>
+      <th class="col_heading level0 col6">6</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td id="T_e6695_row0_col0" class="data row0 col0">0</td>
+      <td id="T_e6695_row0_col1" class="data row0 col1">0</td>
+      <td id="T_e6695_row0_col2" class="data row0 col2">0</td>
+      <td id="T_e6695_row0_col3" class="data row0 col3">1</td>
+      <td id="T_e6695_row0_col4" class="data row0 col4">2</td>
+      <td id="T_e6695_row0_col5" class="data row0 col5">3</td>
+      <td id="T_e6695_row0_col6" class="data row0 col6">4</td>
+    </tr>
+<tr>
+<td id="T_e6695_row1_col0" class="data row1 col0">5</td>
+      <td id="T_e6695_row1_col1" class="data row1 col1">6</td>
+      <td id="T_e6695_row1_col2" class="data row1 col2">7</td>
+      <td id="T_e6695_row1_col3" class="data row1 col3">8</td>
+      <td id="T_e6695_row1_col4" class="data row1 col4">9</td>
+      <td id="T_e6695_row1_col5" class="data row1 col5">10</td>
+      <td id="T_e6695_row1_col6" class="data row1 col6">11</td>
+    </tr>
+<tr>
+<td id="T_e6695_row2_col0" class="data row2 col0">12</td>
+      <td id="T_e6695_row2_col1" class="data row2 col1">13</td>
+      <td id="T_e6695_row2_col2" class="data row2 col2">14</td>
+      <td id="T_e6695_row2_col3" class="data row2 col3">15</td>
+      <td id="T_e6695_row2_col4" class="data row2 col4">16</td>
+      <td id="T_e6695_row2_col5" class="data row2 col5">17</td>
+      <td id="T_e6695_row2_col6" class="data row2 col6">18</td>
+    </tr>
+<tr>
+<td id="T_e6695_row3_col0" class="data row3 col0">19</td>
+      <td id="T_e6695_row3_col1" class="data row3 col1">20</td>
+      <td id="T_e6695_row3_col2" class="data row3 col2">21</td>
+      <td id="T_e6695_row3_col3" class="data row3 col3">22</td>
+      <td id="T_e6695_row3_col4" class="data row3 col4">23</td>
+      <td id="T_e6695_row3_col5" class="data row3 col5">24</td>
+      <td id="T_e6695_row3_col6" class="data row3 col6">25</td>
+    </tr>
+<tr>
+<td id="T_e6695_row4_col0" class="data row4 col0">26</td>
+      <td id="T_e6695_row4_col1" class="data row4 col1">27</td>
+      <td id="T_e6695_row4_col2" class="data row4 col2">28</td>
+      <td id="T_e6695_row4_col3" class="data row4 col3">29</td>
+      <td id="T_e6695_row4_col4" class="data row4 col4">30</td>
+      <td id="T_e6695_row4_col5" class="data row4 col5">31</td>
+      <td id="T_e6695_row4_col6" class="data row4 col6">0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+<div class="month">
+<h3>August 2021</h3>
+<style type="text/css">
+#T_671a4_row0_col0, #T_671a4_row0_col1, #T_671a4_row0_col2, #T_671a4_row0_col3, #T_671a4_row0_col4, #T_671a4_row0_col5, #T_671a4_row5_col2, #T_671a4_row5_col3, #T_671a4_row5_col4, #T_671a4_row5_col5, #T_671a4_row5_col6 {
+  font-size: 0px;
+}
+#T_671a4_row0_col6, #T_671a4_row1_col0, #T_671a4_row1_col1, #T_671a4_row1_col2, #T_671a4_row1_col3, #T_671a4_row1_col4, #T_671a4_row1_col5, #T_671a4_row1_col6, #T_671a4_row2_col0, #T_671a4_row2_col1, #T_671a4_row2_col2, #T_671a4_row2_col3, #T_671a4_row2_col4, #T_671a4_row2_col5, #T_671a4_row2_col6, #T_671a4_row3_col0, #T_671a4_row3_col1, #T_671a4_row3_col2, #T_671a4_row3_col3, #T_671a4_row3_col4, #T_671a4_row3_col5, #T_671a4_row3_col6, #T_671a4_row4_col0, #T_671a4_row4_col1, #T_671a4_row4_col2, #T_671a4_row4_col3, #T_671a4_row4_col4, #T_671a4_row4_col5, #T_671a4_row4_col6, #T_671a4_row5_col0, #T_671a4_row5_col1 {
+  background-color: purple;
+}
+</style>
+<table id="T_671a4_">
+<thead><tr>
+<th class="col_heading level0 col0">0</th>
+      <th class="col_heading level0 col1">1</th>
+      <th class="col_heading level0 col2">2</th>
+      <th class="col_heading level0 col3">3</th>
+      <th class="col_heading level0 col4">4</th>
+      <th class="col_heading level0 col5">5</th>
+      <th class="col_heading level0 col6">6</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td id="T_671a4_row0_col0" class="data row0 col0">0</td>
+      <td id="T_671a4_row0_col1" class="data row0 col1">0</td>
+      <td id="T_671a4_row0_col2" class="data row0 col2">0</td>
+      <td id="T_671a4_row0_col3" class="data row0 col3">0</td>
+      <td id="T_671a4_row0_col4" class="data row0 col4">0</td>
+      <td id="T_671a4_row0_col5" class="data row0 col5">0</td>
+      <td id="T_671a4_row0_col6" class="data row0 col6">1</td>
+    </tr>
+<tr>
+<td id="T_671a4_row1_col0" class="data row1 col0">2</td>
+      <td id="T_671a4_row1_col1" class="data row1 col1">3</td>
+      <td id="T_671a4_row1_col2" class="data row1 col2">4</td>
+      <td id="T_671a4_row1_col3" class="data row1 col3">5</td>
+      <td id="T_671a4_row1_col4" class="data row1 col4">6</td>
+      <td id="T_671a4_row1_col5" class="data row1 col5">7</td>
+      <td id="T_671a4_row1_col6" class="data row1 col6">8</td>
+    </tr>
+<tr>
+<td id="T_671a4_row2_col0" class="data row2 col0">9</td>
+      <td id="T_671a4_row2_col1" class="data row2 col1">10</td>
+      <td id="T_671a4_row2_col2" class="data row2 col2">11</td>
+      <td id="T_671a4_row2_col3" class="data row2 col3">12</td>
+      <td id="T_671a4_row2_col4" class="data row2 col4">13</td>
+      <td id="T_671a4_row2_col5" class="data row2 col5">14</td>
+      <td id="T_671a4_row2_col6" class="data row2 col6">15</td>
+    </tr>
+<tr>
+<td id="T_671a4_row3_col0" class="data row3 col0">16</td>
+      <td id="T_671a4_row3_col1" class="data row3 col1">17</td>
+      <td id="T_671a4_row3_col2" class="data row3 col2">18</td>
+      <td id="T_671a4_row3_col3" class="data row3 col3">19</td>
+      <td id="T_671a4_row3_col4" class="data row3 col4">20</td>
+      <td id="T_671a4_row3_col5" class="data row3 col5">21</td>
+      <td id="T_671a4_row3_col6" class="data row3 col6">22</td>
+    </tr>
+<tr>
+<td id="T_671a4_row4_col0" class="data row4 col0">23</td>
+      <td id="T_671a4_row4_col1" class="data row4 col1">24</td>
+      <td id="T_671a4_row4_col2" class="data row4 col2">25</td>
+      <td id="T_671a4_row4_col3" class="data row4 col3">26</td>
+      <td id="T_671a4_row4_col4" class="data row4 col4">27</td>
+      <td id="T_671a4_row4_col5" class="data row4 col5">28</td>
+      <td id="T_671a4_row4_col6" class="data row4 col6">29</td>
+    </tr>
+<tr>
+<td id="T_671a4_row5_col0" class="data row5 col0">30</td>
+      <td id="T_671a4_row5_col1" class="data row5 col1">31</td>
+      <td id="T_671a4_row5_col2" class="data row5 col2">0</td>
+      <td id="T_671a4_row5_col3" class="data row5 col3">0</td>
+      <td id="T_671a4_row5_col4" class="data row5 col4">0</td>
+      <td id="T_671a4_row5_col5" class="data row5 col5">0</td>
+      <td id="T_671a4_row5_col6" class="data row5 col6">0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+<div class="month">
+<h3>September 2021</h3>
+<style type="text/css">
+#T_584e6_row0_col0, #T_584e6_row0_col1, #T_584e6_row4_col4, #T_584e6_row4_col5, #T_584e6_row4_col6 {
+  font-size: 0px;
+}
+#T_584e6_row0_col2, #T_584e6_row0_col3, #T_584e6_row0_col4, #T_584e6_row0_col5, #T_584e6_row0_col6, #T_584e6_row1_col1, #T_584e6_row1_col2, #T_584e6_row1_col3, #T_584e6_row1_col4, #T_584e6_row1_col5, #T_584e6_row1_col6, #T_584e6_row2_col0, #T_584e6_row2_col1, #T_584e6_row2_col2, #T_584e6_row2_col3, #T_584e6_row2_col4, #T_584e6_row2_col5, #T_584e6_row2_col6, #T_584e6_row3_col0, #T_584e6_row3_col1, #T_584e6_row3_col2, #T_584e6_row3_col3, #T_584e6_row3_col4, #T_584e6_row3_col5, #T_584e6_row3_col6, #T_584e6_row4_col0, #T_584e6_row4_col1, #T_584e6_row4_col2, #T_584e6_row4_col3 {
+  background-color: purple;
+}
+#T_584e6_row1_col0 {
+  background-color: yellow;
+  color: black;
+}
+</style>
+<table id="T_584e6_">
+<thead><tr>
+<th class="col_heading level0 col0">0</th>
+      <th class="col_heading level0 col1">1</th>
+      <th class="col_heading level0 col2">2</th>
+      <th class="col_heading level0 col3">3</th>
+      <th class="col_heading level0 col4">4</th>
+      <th class="col_heading level0 col5">5</th>
+      <th class="col_heading level0 col6">6</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td id="T_584e6_row0_col0" class="data row0 col0">0</td>
+      <td id="T_584e6_row0_col1" class="data row0 col1">0</td>
+      <td id="T_584e6_row0_col2" class="data row0 col2">1</td>
+      <td id="T_584e6_row0_col3" class="data row0 col3">2</td>
+      <td id="T_584e6_row0_col4" class="data row0 col4">3</td>
+      <td id="T_584e6_row0_col5" class="data row0 col5">4</td>
+      <td id="T_584e6_row0_col6" class="data row0 col6">5</td>
+    </tr>
+<tr>
+<td id="T_584e6_row1_col0" class="data row1 col0">6</td>
+      <td id="T_584e6_row1_col1" class="data row1 col1">7</td>
+      <td id="T_584e6_row1_col2" class="data row1 col2">8</td>
+      <td id="T_584e6_row1_col3" class="data row1 col3">9</td>
+      <td id="T_584e6_row1_col4" class="data row1 col4">10</td>
+      <td id="T_584e6_row1_col5" class="data row1 col5">11</td>
+      <td id="T_584e6_row1_col6" class="data row1 col6">12</td>
+    </tr>
+<tr>
+<td id="T_584e6_row2_col0" class="data row2 col0">13</td>
+      <td id="T_584e6_row2_col1" class="data row2 col1">14</td>
+      <td id="T_584e6_row2_col2" class="data row2 col2">15</td>
+      <td id="T_584e6_row2_col3" class="data row2 col3">16</td>
+      <td id="T_584e6_row2_col4" class="data row2 col4">17</td>
+      <td id="T_584e6_row2_col5" class="data row2 col5">18</td>
+      <td id="T_584e6_row2_col6" class="data row2 col6">19</td>
+    </tr>
+<tr>
+<td id="T_584e6_row3_col0" class="data row3 col0">20</td>
+      <td id="T_584e6_row3_col1" class="data row3 col1">21</td>
+      <td id="T_584e6_row3_col2" class="data row3 col2">22</td>
+      <td id="T_584e6_row3_col3" class="data row3 col3">23</td>
+      <td id="T_584e6_row3_col4" class="data row3 col4">24</td>
+      <td id="T_584e6_row3_col5" class="data row3 col5">25</td>
+      <td id="T_584e6_row3_col6" class="data row3 col6">26</td>
+    </tr>
+<tr>
+<td id="T_584e6_row4_col0" class="data row4 col0">27</td>
+      <td id="T_584e6_row4_col1" class="data row4 col1">28</td>
+      <td id="T_584e6_row4_col2" class="data row4 col2">29</td>
+      <td id="T_584e6_row4_col3" class="data row4 col3">30</td>
+      <td id="T_584e6_row4_col4" class="data row4 col4">0</td>
+      <td id="T_584e6_row4_col5" class="data row4 col5">0</td>
+      <td id="T_584e6_row4_col6" class="data row4 col6">0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+<div class="month">
+<h3>October 2021</h3>
+<style type="text/css">
+#T_5b5c0_row0_col0, #T_5b5c0_row0_col1, #T_5b5c0_row0_col2, #T_5b5c0_row0_col3 {
+  font-size: 0px;
+}
+#T_5b5c0_row0_col4, #T_5b5c0_row0_col5, #T_5b5c0_row0_col6, #T_5b5c0_row1_col0, #T_5b5c0_row1_col1, #T_5b5c0_row1_col2, #T_5b5c0_row1_col3, #T_5b5c0_row1_col4, #T_5b5c0_row1_col5, #T_5b5c0_row1_col6, #T_5b5c0_row2_col1, #T_5b5c0_row2_col2, #T_5b5c0_row2_col3, #T_5b5c0_row2_col4, #T_5b5c0_row2_col5, #T_5b5c0_row2_col6, #T_5b5c0_row3_col0, #T_5b5c0_row3_col1, #T_5b5c0_row3_col2, #T_5b5c0_row3_col3, #T_5b5c0_row3_col4, #T_5b5c0_row3_col5, #T_5b5c0_row3_col6, #T_5b5c0_row4_col0, #T_5b5c0_row4_col1, #T_5b5c0_row4_col2, #T_5b5c0_row4_col3, #T_5b5c0_row4_col4, #T_5b5c0_row4_col5, #T_5b5c0_row4_col6 {
+  background-color: purple;
+}
+#T_5b5c0_row2_col0 {
+  background-color: yellow;
+  color: black;
+}
+</style>
+<table id="T_5b5c0_">
+<thead><tr>
+<th class="col_heading level0 col0">0</th>
+      <th class="col_heading level0 col1">1</th>
+      <th class="col_heading level0 col2">2</th>
+      <th class="col_heading level0 col3">3</th>
+      <th class="col_heading level0 col4">4</th>
+      <th class="col_heading level0 col5">5</th>
+      <th class="col_heading level0 col6">6</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td id="T_5b5c0_row0_col0" class="data row0 col0">0</td>
+      <td id="T_5b5c0_row0_col1" class="data row0 col1">0</td>
+      <td id="T_5b5c0_row0_col2" class="data row0 col2">0</td>
+      <td id="T_5b5c0_row0_col3" class="data row0 col3">0</td>
+      <td id="T_5b5c0_row0_col4" class="data row0 col4">1</td>
+      <td id="T_5b5c0_row0_col5" class="data row0 col5">2</td>
+      <td id="T_5b5c0_row0_col6" class="data row0 col6">3</td>
+    </tr>
+<tr>
+<td id="T_5b5c0_row1_col0" class="data row1 col0">4</td>
+      <td id="T_5b5c0_row1_col1" class="data row1 col1">5</td>
+      <td id="T_5b5c0_row1_col2" class="data row1 col2">6</td>
+      <td id="T_5b5c0_row1_col3" class="data row1 col3">7</td>
+      <td id="T_5b5c0_row1_col4" class="data row1 col4">8</td>
+      <td id="T_5b5c0_row1_col5" class="data row1 col5">9</td>
+      <td id="T_5b5c0_row1_col6" class="data row1 col6">10</td>
+    </tr>
+<tr>
+<td id="T_5b5c0_row2_col0" class="data row2 col0">11</td>
+      <td id="T_5b5c0_row2_col1" class="data row2 col1">12</td>
+      <td id="T_5b5c0_row2_col2" class="data row2 col2">13</td>
+      <td id="T_5b5c0_row2_col3" class="data row2 col3">14</td>
+      <td id="T_5b5c0_row2_col4" class="data row2 col4">15</td>
+      <td id="T_5b5c0_row2_col5" class="data row2 col5">16</td>
+      <td id="T_5b5c0_row2_col6" class="data row2 col6">17</td>
+    </tr>
+<tr>
+<td id="T_5b5c0_row3_col0" class="data row3 col0">18</td>
+      <td id="T_5b5c0_row3_col1" class="data row3 col1">19</td>
+      <td id="T_5b5c0_row3_col2" class="data row3 col2">20</td>
+      <td id="T_5b5c0_row3_col3" class="data row3 col3">21</td>
+      <td id="T_5b5c0_row3_col4" class="data row3 col4">22</td>
+      <td id="T_5b5c0_row3_col5" class="data row3 col5">23</td>
+      <td id="T_5b5c0_row3_col6" class="data row3 col6">24</td>
+    </tr>
+<tr>
+<td id="T_5b5c0_row4_col0" class="data row4 col0">25</td>
+      <td id="T_5b5c0_row4_col1" class="data row4 col1">26</td>
+      <td id="T_5b5c0_row4_col2" class="data row4 col2">27</td>
+      <td id="T_5b5c0_row4_col3" class="data row4 col3">28</td>
+      <td id="T_5b5c0_row4_col4" class="data row4 col4">29</td>
+      <td id="T_5b5c0_row4_col5" class="data row4 col5">30</td>
+      <td id="T_5b5c0_row4_col6" class="data row4 col6">31</td>
+    </tr>
+</tbody>
+</table>
+</div>
+<div class="month">
+<h3>November 2021</h3>
+<style type="text/css">
+#T_fdc7e_row0_col0, #T_fdc7e_row0_col1, #T_fdc7e_row0_col2, #T_fdc7e_row0_col3, #T_fdc7e_row0_col4, #T_fdc7e_row0_col5, #T_fdc7e_row0_col6, #T_fdc7e_row1_col0, #T_fdc7e_row1_col1, #T_fdc7e_row1_col2, #T_fdc7e_row1_col4, #T_fdc7e_row1_col5, #T_fdc7e_row1_col6, #T_fdc7e_row2_col0, #T_fdc7e_row2_col1, #T_fdc7e_row2_col2, #T_fdc7e_row2_col3, #T_fdc7e_row2_col4, #T_fdc7e_row2_col5, #T_fdc7e_row2_col6, #T_fdc7e_row3_col0, #T_fdc7e_row3_col1, #T_fdc7e_row3_col2, #T_fdc7e_row3_col4, #T_fdc7e_row3_col5, #T_fdc7e_row3_col6, #T_fdc7e_row4_col0, #T_fdc7e_row4_col1 {
+  background-color: purple;
+}
+#T_fdc7e_row1_col3, #T_fdc7e_row3_col3 {
+  background-color: yellow;
+  color: black;
+}
+#T_fdc7e_row4_col2, #T_fdc7e_row4_col3, #T_fdc7e_row4_col4, #T_fdc7e_row4_col5, #T_fdc7e_row4_col6 {
+  font-size: 0px;
+}
+</style>
+<table id="T_fdc7e_">
+<thead><tr>
+<th class="col_heading level0 col0">0</th>
+      <th class="col_heading level0 col1">1</th>
+      <th class="col_heading level0 col2">2</th>
+      <th class="col_heading level0 col3">3</th>
+      <th class="col_heading level0 col4">4</th>
+      <th class="col_heading level0 col5">5</th>
+      <th class="col_heading level0 col6">6</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td id="T_fdc7e_row0_col0" class="data row0 col0">1</td>
+      <td id="T_fdc7e_row0_col1" class="data row0 col1">2</td>
+      <td id="T_fdc7e_row0_col2" class="data row0 col2">3</td>
+      <td id="T_fdc7e_row0_col3" class="data row0 col3">4</td>
+      <td id="T_fdc7e_row0_col4" class="data row0 col4">5</td>
+      <td id="T_fdc7e_row0_col5" class="data row0 col5">6</td>
+      <td id="T_fdc7e_row0_col6" class="data row0 col6">7</td>
+    </tr>
+<tr>
+<td id="T_fdc7e_row1_col0" class="data row1 col0">8</td>
+      <td id="T_fdc7e_row1_col1" class="data row1 col1">9</td>
+      <td id="T_fdc7e_row1_col2" class="data row1 col2">10</td>
+      <td id="T_fdc7e_row1_col3" class="data row1 col3">11</td>
+      <td id="T_fdc7e_row1_col4" class="data row1 col4">12</td>
+      <td id="T_fdc7e_row1_col5" class="data row1 col5">13</td>
+      <td id="T_fdc7e_row1_col6" class="data row1 col6">14</td>
+    </tr>
+<tr>
+<td id="T_fdc7e_row2_col0" class="data row2 col0">15</td>
+      <td id="T_fdc7e_row2_col1" class="data row2 col1">16</td>
+      <td id="T_fdc7e_row2_col2" class="data row2 col2">17</td>
+      <td id="T_fdc7e_row2_col3" class="data row2 col3">18</td>
+      <td id="T_fdc7e_row2_col4" class="data row2 col4">19</td>
+      <td id="T_fdc7e_row2_col5" class="data row2 col5">20</td>
+      <td id="T_fdc7e_row2_col6" class="data row2 col6">21</td>
+    </tr>
+<tr>
+<td id="T_fdc7e_row3_col0" class="data row3 col0">22</td>
+      <td id="T_fdc7e_row3_col1" class="data row3 col1">23</td>
+      <td id="T_fdc7e_row3_col2" class="data row3 col2">24</td>
+      <td id="T_fdc7e_row3_col3" class="data row3 col3">25</td>
+      <td id="T_fdc7e_row3_col4" class="data row3 col4">26</td>
+      <td id="T_fdc7e_row3_col5" class="data row3 col5">27</td>
+      <td id="T_fdc7e_row3_col6" class="data row3 col6">28</td>
+    </tr>
+<tr>
+<td id="T_fdc7e_row4_col0" class="data row4 col0">29</td>
+      <td id="T_fdc7e_row4_col1" class="data row4 col1">30</td>
+      <td id="T_fdc7e_row4_col2" class="data row4 col2">0</td>
+      <td id="T_fdc7e_row4_col3" class="data row4 col3">0</td>
+      <td id="T_fdc7e_row4_col4" class="data row4 col4">0</td>
+      <td id="T_fdc7e_row4_col5" class="data row4 col5">0</td>
+      <td id="T_fdc7e_row4_col6" class="data row4 col6">0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+<div class="month">
+<h3>December 2021</h3>
+<style type="text/css">
+#T_7d870_row0_col0, #T_7d870_row0_col1, #T_7d870_row4_col5, #T_7d870_row4_col6 {
+  font-size: 0px;
+}
+#T_7d870_row0_col2, #T_7d870_row0_col3, #T_7d870_row0_col4, #T_7d870_row0_col5, #T_7d870_row0_col6, #T_7d870_row1_col0, #T_7d870_row1_col1, #T_7d870_row1_col2, #T_7d870_row1_col3, #T_7d870_row1_col4, #T_7d870_row1_col5, #T_7d870_row1_col6, #T_7d870_row2_col0, #T_7d870_row2_col1, #T_7d870_row2_col2, #T_7d870_row2_col3, #T_7d870_row2_col4, #T_7d870_row2_col5, #T_7d870_row2_col6, #T_7d870_row3_col0, #T_7d870_row3_col1, #T_7d870_row3_col2, #T_7d870_row3_col3, #T_7d870_row3_col6, #T_7d870_row4_col0, #T_7d870_row4_col1, #T_7d870_row4_col2, #T_7d870_row4_col3 {
+  background-color: purple;
+}
+#T_7d870_row3_col4, #T_7d870_row3_col5, #T_7d870_row4_col4 {
+  background-color: yellow;
+  color: black;
+}
+</style>
+<table id="T_7d870_">
+<thead><tr>
+<th class="col_heading level0 col0">0</th>
+      <th class="col_heading level0 col1">1</th>
+      <th class="col_heading level0 col2">2</th>
+      <th class="col_heading level0 col3">3</th>
+      <th class="col_heading level0 col4">4</th>
+      <th class="col_heading level0 col5">5</th>
+      <th class="col_heading level0 col6">6</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td id="T_7d870_row0_col0" class="data row0 col0">0</td>
+      <td id="T_7d870_row0_col1" class="data row0 col1">0</td>
+      <td id="T_7d870_row0_col2" class="data row0 col2">1</td>
+      <td id="T_7d870_row0_col3" class="data row0 col3">2</td>
+      <td id="T_7d870_row0_col4" class="data row0 col4">3</td>
+      <td id="T_7d870_row0_col5" class="data row0 col5">4</td>
+      <td id="T_7d870_row0_col6" class="data row0 col6">5</td>
+    </tr>
+<tr>
+<td id="T_7d870_row1_col0" class="data row1 col0">6</td>
+      <td id="T_7d870_row1_col1" class="data row1 col1">7</td>
+      <td id="T_7d870_row1_col2" class="data row1 col2">8</td>
+      <td id="T_7d870_row1_col3" class="data row1 col3">9</td>
+      <td id="T_7d870_row1_col4" class="data row1 col4">10</td>
+      <td id="T_7d870_row1_col5" class="data row1 col5">11</td>
+      <td id="T_7d870_row1_col6" class="data row1 col6">12</td>
+    </tr>
+<tr>
+<td id="T_7d870_row2_col0" class="data row2 col0">13</td>
+      <td id="T_7d870_row2_col1" class="data row2 col1">14</td>
+      <td id="T_7d870_row2_col2" class="data row2 col2">15</td>
+      <td id="T_7d870_row2_col3" class="data row2 col3">16</td>
+      <td id="T_7d870_row2_col4" class="data row2 col4">17</td>
+      <td id="T_7d870_row2_col5" class="data row2 col5">18</td>
+      <td id="T_7d870_row2_col6" class="data row2 col6">19</td>
+    </tr>
+<tr>
+<td id="T_7d870_row3_col0" class="data row3 col0">20</td>
+      <td id="T_7d870_row3_col1" class="data row3 col1">21</td>
+      <td id="T_7d870_row3_col2" class="data row3 col2">22</td>
+      <td id="T_7d870_row3_col3" class="data row3 col3">23</td>
+      <td id="T_7d870_row3_col4" class="data row3 col4">24</td>
+      <td id="T_7d870_row3_col5" class="data row3 col5">25</td>
+      <td id="T_7d870_row3_col6" class="data row3 col6">26</td>
+    </tr>
+<tr>
+<td id="T_7d870_row4_col0" class="data row4 col0">27</td>
+      <td id="T_7d870_row4_col1" class="data row4 col1">28</td>
+      <td id="T_7d870_row4_col2" class="data row4 col2">29</td>
+      <td id="T_7d870_row4_col3" class="data row4 col3">30</td>
+      <td id="T_7d870_row4_col4" class="data row4 col4">31</td>
+      <td id="T_7d870_row4_col5" class="data row4 col5">0</td>
+      <td id="T_7d870_row4_col6" class="data row4 col6">0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>using the prior html output, and <code>div.calendars</code> as a reference we use the modern css <a href="https://css-tricks.com/snippets/css/complete-guide-grid/"><code>grid</code> display layout</a>. this results in the calendars being reorganized by the browser.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">HTML</span><span class="p">(</span>
+        <span class="sd">"""&lt;style&gt;</span>
+<span class="sd">        .calendars {</span>
+<span class="sd">            display: grid;</span>
+<span class="sd">            grid-template-columns: 1fr 1fr 1fr;</span>
+<span class="sd">        }</span>
+<span class="sd">        &lt;/style&gt;"""</span>
+    <span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><style>
+    .calendars {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    </style></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="recap">recap<a class="anchor-link" href="#recap">¶</a>
+</h3>
+<p>we've managed most of your goal using <code>pandas</code> until we needed to customize the display, at that point we combined knowledge of <strong>html</strong> and <strong>css</strong> to gain extra control over our display. we used a few interesting <code>pandas.DataFrame</code>  features like:</p>
+<ul>
+<li>
+<code>pandas.date_range</code> to begin our work with the calendar</li>
+<li>
+<code>pandas.DataFrame.assign</code> to set new columns on our dataframe</li>
+<li>
+<code>df.apply(pandas.Series)</code> to wide dataframes on container elements</li>
+<li>
+<code>pandas.DataFrame.unstack</code> to change the shape of our dataframe by translating row indexes to columns.</li>
+<li>
+<code>pandas.DataFrame.style</code> to use a dataframe to provide cell level styling in our output.</li>
+<li>we used <code>pandas.DataFrame.groupby</code> in a for loop, as an iterator, which is quite a powerful technique for inspecting grouped operations</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../e2cae138e4bb043cd277709ff45ba8a3/2021-10-11-colorizing/" rel="prev" title="2021-10-11-colorizing">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nikolademo",
+            disqus_url="/posts/0d5cbee1f3b4aac205e9ddd407d0f4dc/2021-10-03-pd-calendar/",
+        disqus_title="2021-10-03-pd-calendar",
+        disqus_identifier="cache/_posts/0d5cbee1f3b4aac205e9ddd407d0f4dc/2021-10-03-pd-calendar.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script></article><script>var disqus_shortname="nikolademo";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer"></footer>
+</div>
+</div>
+
+
+        <script src="../../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2021-10-08-distributions-dataframe | media</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
+<link rel="canonical" href=".">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="">
+<link rel="next" href="../../e2cae138e4bb043cd277709ff45ba8a3/2021-10-11-colorizing/" title="2021-10-11-colorizing" type="text/html">
+<meta property="og:site_name" content="media">
+<meta property="og:title" content="2021-10-08-distributions-dataframe">
+<meta property="og:url" content="/posts/f34f1fc4454de5e61b6ed55a6736071c/2021-10-08-distributions-dataframe/">
+<meta property="og:description" content="what do we learn when we look at the distributions on our system¶
+
+
+
+
+
+
+importlib.metadata is an addition to Python 3.8 that makes it easier to explore the packages in your current python environment.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-10-13T00:00:00Z">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../../../">
+
+            <span id="blog-title">media</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="index.ipynb" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100"></ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">2021-10-08-distributions-dataframe</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2021-10-13T00:00:00Z" itemprop="datePublished" title="2021-10-13 00:00">2021-10-13 00:00</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/_posts/f34f1fc4454de5e61b6ed55a6736071c/2021-10-08-distributions-dataframe.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="what-do-we-learn-when-we-look-at-the-distributions-on-our-system">what do we learn when <em>we look at the distributions on our system</em><a class="anchor-link" href="#what-do-we-learn-when-we-look-at-the-distributions-on-our-system">¶</a>
+</h2>
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://docs.python.org/3/library/importlib.metadata.html"><code>importlib.metadata</code></a> is an addition to Python 3.8 that makes it easier to explore the packages in your current python environment. we are going to load this data into pandas and see what we can learn from this data. this approach is fabulous way to generate really data for a demonstration.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">importlib.metadata</span><span class="o">,</span> <span class="nn">pandas</span><span class="o">,</span> <span class="nn">toolz</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>create a series from <code>importlib.metadata.distributions</code> . each distribution contains information about a package.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">distributions</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="n">x</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"Name"</span><span class="p">):</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">importlib</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">distributions</span><span class="p">()})</span>
+    <span class="n">distributions</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>sphinxcontrib-bibtex    &lt;importlib.metadata.PathDistribution object at...
+pyasn1-modules          &lt;importlib.metadata.PathDistribution object at...
+dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>the distributions can be expanded into a tidy dataframe with the following <code>features</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'files'</span><span class="p">,</span> <span class="s1">'version'</span><span class="p">,</span> <span class="s1">'requires'</span><span class="p">,</span> <span class="s1">'metadata'</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>we'll widen our <code>distributions</code> to a tidy dataframe</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">df</span> <span class="o">=</span> <span class="n">distributions</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="n">toolz</span><span class="o">.</span><span class="n">compose_left</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">attrgetter</span><span class="p">(</span><span class="o">*</span><span class="n">features</span><span class="p">),</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">features</span><span class="p">)),</span> <span class="n">features</span><span class="p">)))</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>files</th>
+      <th>version</th>
+      <th>requires</th>
+      <th>metadata</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>blinker</th>
+      <td>[blinker-1.4.dist-info/AUTHORS, blinker-1.4.di...</td>
+      <td>1.4</td>
+      <td>None</td>
+      <td>[Metadata-Version, Name, Version, Summary, Hom...</td>
+    </tr>
+<tr>
+<th>conda-package-handling</th>
+      <td>[../../../bin/cph, conda_package_handling-1.7....</td>
+      <td>1.7.3</td>
+      <td>[six]</td>
+      <td>[Metadata-Version, Name, Version, Summary, Hom...</td>
+    </tr>
+</tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>there are still some goodies in this dataframe nested into the <code>metadata</code> column. in the next segment we create a wider dataframe with <code>distribution</code> details and package <code>metadata</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">distribution</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+        <span class="n">metadata</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">"metadata"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="n">toolz</span><span class="o">.</span><span class="n">compose_left</span><span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr>
+<th></th>
+      <th colspan="4" halign="left">distribution</th>
+      <th colspan="17" halign="left">metadata</th>
+    </tr>
+<tr>
+<th></th>
+      <th>files</th>
+      <th>version</th>
+      <th>requires</th>
+      <th>metadata</th>
+      <th>Metadata-Version</th>
+      <th>Name</th>
+      <th>Version</th>
+      <th>Summary</th>
+      <th>Home-page</th>
+      <th>Author</th>
+      <th>...</th>
+      <th>Requires-Dist</th>
+      <th>Project-URL</th>
+      <th>Description-Content-Type</th>
+      <th>Maintainer</th>
+      <th>Maintainer-email</th>
+      <th>License-File</th>
+      <th>Provides-Extra</th>
+      <th>Description</th>
+      <th>Download-URL</th>
+      <th>Provides</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th>sphinx-book-theme</th>
+      <td>[sphinx_book_theme-0.1.4.dist-info/INSTALLER, ...</td>
+      <td>0.1.4</td>
+      <td>[beautifulsoup4 (&lt;5,&gt;=4.6.1), click (~=7.1), d...</td>
+      <td>[Metadata-Version, Name, Version, Summary, Hom...</td>
+      <td>2.1</td>
+      <td>sphinx-book-theme</td>
+      <td>0.1.4</td>
+      <td>Jupyter Book: Create an online book with Jupyt...</td>
+      <td>https://jupyterbook.org/</td>
+      <td>Project Jupyter Contributors</td>
+      <td>...</td>
+      <td>beautifulsoup4 (&lt;5,&gt;=4.6.1)</td>
+      <td>Documentation, https://jupyterbook.org</td>
+      <td>text/markdown</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>code_style</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+<tr>
+<th>html5lib</th>
+      <td>[html5lib-1.1.dist-info/AUTHORS.rst, html5lib-...</td>
+      <td>1.1</td>
+      <td>[six (&gt;=1.9), webencodings, genshi ; extra == ...</td>
+      <td>[Metadata-Version, Name, Version, Summary, Hom...</td>
+      <td>2.1</td>
+      <td>html5lib</td>
+      <td>1.1</td>
+      <td>HTML parser based on the WHATWG HTML specifica...</td>
+      <td>https://github.com/html5lib/html5lib-python</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>six (&gt;=1.9)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>James Graham</td>
+      <td>james@hoppipolla.co.uk</td>
+      <td>NaN</td>
+      <td>all</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+</tbody>
+</table>
+<p>2 rows × 26 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="what-can-we-learn-about-our-environment?">what can we learn about our environment?<a class="anchor-link" href="#what-can-we-learn-about-our-environment?">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="how-many-distributions-does-it-contain?">how many distributions does it contain?<a class="anchor-link" href="#how-many-distributions-does-it-contain?">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="sa">F</span><span class="s2">"""in this environment, there are </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> distributions installed."""</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'in this environment, there are 363 distributions installed.'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="how-many-files-are-in-each-distribution">how many files are in each distribution<a class="anchor-link" href="#how-many-files-are-in-each-distribution">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">df</span><span class="p">[</span><span class="s2">"distribution"</span><span class="p">][</span><span class="s2">"files"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span> <span class="ow">or</span> <span class="p">[]))</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>mkdocs-material</th>
+      <th>bokeh</th>
+      <th>jedi</th>
+      <th>pandas</th>
+      <th>notebook</th>
+      <th>mypy</th>
+      <th>panel</th>
+      <th>numpy</th>
+      <th>Faker</th>
+      <th>holoviews</th>
+    </tr></thead>
+<tbody><tr>
+<th>files</th>
+      <td>8144</td>
+      <td>2244</td>
+      <td>1763</td>
+      <td>1661</td>
+      <td>1516</td>
+      <td>1511</td>
+      <td>1350</td>
+      <td>1194</td>
+      <td>1017</td>
+      <td>951</td>
+    </tr></tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="what-is-the-distribution-of-licenses?">what is the distribution of licenses?<a class="anchor-link" href="#what-is-the-distribution-of-licenses?">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"metadata"</span><span class="p">][</span><span class="s2">"License"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>MIT</th>
+      <th>BSD</th>
+      <th>BSD-3-Clause</th>
+      <th>UNKNOWN</th>
+      <th>MIT License</th>
+      <th>Apache 2.0</th>
+      <th>ISC</th>
+      <th>BSD License</th>
+      <th>Apache License, Version 2.0</th>
+      <th>Apache Software License</th>
+    </tr></thead>
+<tbody><tr>
+<th>License</th>
+      <td>100</td>
+      <td>62</td>
+      <td>37</td>
+      <td>36</td>
+      <td>17</td>
+      <td>13</td>
+      <td>6</td>
+      <td>6</td>
+      <td>5</td>
+      <td>5</td>
+    </tr></tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="who-authored-my-packages?">who authored my packages?<a class="anchor-link" href="#who-authored-my-packages?">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"metadata"</span><span class="p">][</span><span class="s2">"Author"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>Jupyter Development Team</th>
+      <th>wxyz contributors</th>
+      <th>Sébastien Eustace</th>
+      <th>Georg Brandl</th>
+      <th>IPython Development Team</th>
+      <th>Chris Sewell</th>
+      <th>Kenneth Reitz</th>
+      <th>Executable Book Project</th>
+      <th>Armin Ronacher</th>
+      <th>Thomas Kluyver</th>
+    </tr></thead>
+<tbody><tr>
+<th>Author</th>
+      <td>16</td>
+      <td>12</td>
+      <td>10</td>
+      <td>8</td>
+      <td>7</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>5</td>
+      <td>4</td>
+    </tr></tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="conclusion">conclusion<a class="anchor-link" href="#conclusion">¶</a>
+</h3>
+<p>there is a juicy dataset in your environment just waiting for you to explore. what will you find?</p>
+
+</div>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="next">
+                <a href="../../e2cae138e4bb043cd277709ff45ba8a3/2021-10-11-colorizing/" rel="next" title="2021-10-11-colorizing">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nikolademo",
+            disqus_url="/posts/f34f1fc4454de5e61b6ed55a6736071c/2021-10-08-distributions-dataframe/",
+        disqus_title="2021-10-08-distributions-dataframe",
+        disqus_identifier="cache/_posts/f34f1fc4454de5e61b6ed55a6736071c/2021-10-08-distributions-dataframe.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script></article><script>var disqus_shortname="nikolademo";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer"></footer>
+</div>
+</div>
+
+
+        <script src="../../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>
