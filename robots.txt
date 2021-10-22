@@ -1,4 +1,0 @@
-Sitemap: https://github.com/tonyfast/media/sitemapindex.xml
-
-User-Agent: *
-Host: github.com
